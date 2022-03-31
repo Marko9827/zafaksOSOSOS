@@ -1,0 +1,23 @@
+{
+    "name": "marko/zafaks-ososos",
+    "description": "Za faks",
+    "require": {
+        "symfony/debug": "^4.4",
+        "symfony/console": "^6.0"
+    },
+    "require-dev": {
+        "symfony/event-dispatcher": "^6.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Marko\\ZafaksOsosos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marko Nikolic",
+            "email": "marko.supergun@gmail.com"
+        }
+    ]
+}
