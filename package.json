@@ -1,0 +1,28 @@
+{
+  "name": "zafaksososos",
+  "version": "1.0.0",
+  "description": "Za faks",
+  "main": "no",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marko9827/zafaksOSOSOS.git"
+  },
+  "keywords": [
+    "test",
+    "za",
+    "faks"
+  ],
+  "author": "github.com/marko9827",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marko9827/zafaksOSOSOS/issues"
+  },
+  "homepage": "https://github.com/Marko9827/zafaksOSOSOS#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "bootstrap": "^5.1.3"
+  }
+}
