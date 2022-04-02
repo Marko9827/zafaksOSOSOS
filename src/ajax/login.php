@@ -8,9 +8,10 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
 
     if (mysqli_num_rows($sql) > 0) {
         if ($row = mysqli_fetch_assoc($sql)) {
-            if (password_verify($_POST['password'], $row['password'])) {
+            if ($_POST['password'] == $row['password']) {
                 session_regenerate_id();
                 $_SESSION['logged'] = true;
+                $_SESSION['indeks'] = $row['indeks'];
             } else{
                 exit("Šifra nije tačna!");
             }
