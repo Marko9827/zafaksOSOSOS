@@ -12,9 +12,13 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
                 session_regenerate_id();
                 $_SESSION['logged'] = true;
                 $_SESSION['indeks'] = $row['indeks'];
+                echo 1;
             } else{
                 exit("Šifra nije tačna!");
             }
+        }else{
+            exit("Šifra nije tačna!");
+
         }
     }
 }

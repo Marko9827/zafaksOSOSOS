@@ -1,6 +1,8 @@
 <?php
 
-
+function tpl($what, $page_title){
+    include ROOT."/templates/$what.php";
+}
 function loged()
 {
     if (isset($_SESSION['indeks'])) {

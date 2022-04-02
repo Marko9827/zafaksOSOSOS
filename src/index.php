@@ -1,10 +1,12 @@
 <?php
+include "./vendor/autoload.php";
+ 
 
 require_once "./conf.php";
 include "./functions.php";
 
 if (loged()) {
-    include ROOT . "./dashboard.php";
+    include ROOT . "./templates/dashboard.php";
 } else {
     if (!empty($_GET['q'])) {
         if ($_GET['q'] == "Alogin") {

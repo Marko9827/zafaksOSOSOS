@@ -3,7 +3,8 @@
     "description": "Za faks",
     "require": {
         "symfony/debug": "^4.4",
-        "symfony/console": "^6.0"
+        "symfony/console": "^6.0",
+        "smarty/smarty": "^4.1"
     },
     "require-dev": {
         "symfony/event-dispatcher": "^6.0"
