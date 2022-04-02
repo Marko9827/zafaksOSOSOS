@@ -4,31 +4,35 @@ $(document).ready(function () {
 
 });
 
-function login(){
+function login() {
     $.ajax({
         url: window.root_url + "?q=Alogin",
-        type:"POST",
-        data: $("form").serialize(), 
-        success:function(h){
-            alerts(h);
+        type: "POST",
+        data: $("form").serialize(),
+        success: function (h) {
+            if (parseInt(h) == 1) {
+                window.location.reload();
+            } else {
+                alerts(h);
+            }
         }
     })
 }
 
 
-function alerts(msg){
+function alerts(msg) {
 
     var idB = document.getElementById("msgBox");
 
     idB.classList.add("msgBox");
     idB.innerHTML = msg;
     setTimeout(() => {
-   
-        idB.setAttribute("style","opacity:0; ");
-            setTimeout(() => {
-                idB.classList.remove("msgBox");
-                idB.innerHTML = "";
-            }, 100);
+
+        idB.setAttribute("style", "opacity:0; ");
+        setTimeout(() => {
+            idB.classList.remove("msgBox");
+            idB.innerHTML = "";
+        }, 100);
     }, 5000);
-     
+
 }
