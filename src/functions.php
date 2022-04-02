@@ -3,7 +3,7 @@
 
 function loged()
 {
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['indeks'])) {
         return true;
     } else {
         return false;

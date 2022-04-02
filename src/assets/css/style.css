@@ -68,3 +68,13 @@ body {
   color: var(--bs-secondary);
   font-size: 25px;
 }
+
+#msgBox{
+  transition:  .3s;
+  opacity: 1;
+}
+.msgBox{
+  color:red;
+  font-weight:bold;
+  padding:15px 0px;
+}
