@@ -16,9 +16,7 @@
 </head>
 
 <body class="text-center">
-    <ul id="socialLinks">
-        <li><a href="https://github.com/Marko9827/zafaksOSOSOS" target="_blank"><i class="fab fa-github"></i></a></li>
-    </ul>
+
     <form class="form-signin">
         <img class="mb-4" src="./assets/img/logo.svg" alt="svg_logo" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">E-Student</h1>
@@ -33,6 +31,9 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Prijavi me</button>
         <p class="mt-5 mb-3 text-muted">Marko Nikolić &copy; <?php echo date("Y"); ?></p>
     </form>
+    <ul id="socialLinks">
+        <li><a title="Link ka mom Github respozitorijumu od ovog projekta!" href="https://github.com/Marko9827/zafaksOSOSOS" target="_blank"><i class="fab fa-github"></i></a></li>
+    </ul>
     <script src="./app.js"></script>
 </body>
 
