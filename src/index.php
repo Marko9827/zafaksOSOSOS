@@ -1,12 +1,10 @@
 <?php
 
-    require_once "./conf.php";
-    include "./functions.php";
+require_once "./conf.php";
+include "./functions.php";
 
-    if(loged()) {
-        header("Location: ./dashboard.php");
-    } else{
-        header("Location: ./login.php");
-    }
-    
-?>
+if (loged()) {
+    include ROOT."./dashboard.php";
+} else {
+    include  ROOT."/log_reg/login.php";
+}
