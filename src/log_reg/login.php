@@ -1,8 +1,8 @@
+<?php
 
- <?php 
- 
-    tpl("header_tpl","E-student Prijava ");
- ?>
+tpl("header_tpl", "E-student Prijava ");
+?>
+
 <body class="text-center">
 
     <form class="form-signin" onsubmit="return false;">
@@ -23,8 +23,10 @@
     <ul id="socialLinks">
         <li><a title="Link ka mom Github respozitorijumu od ovog projekta!" href="https://github.com/Marko9827/zafaksOSOSOS" target="_blank"><i class="fab fa-github"></i></a></li>
     </ul>
-    <script src="./app.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="<?php echo URL_N; ?>/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo URL_N; ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 

@@ -17,7 +17,7 @@ tpl("navbar_tpl", "");
         <div class="container">
             <div class="row">
                 <div class="col">
-                    Column
+                    <?php echo Specific("username");?>
                 </div>
                 <div class="col">
                     Column

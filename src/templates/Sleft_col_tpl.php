@@ -1,7 +1,7 @@
- <div class="col left-col">
+ <div class="col left-col" >
      <ul>
          <li>
-             <a></a>
+             <a>Odjavi se <span class="bi bi-box-arrow-right"></span></a>
          </li>
      </ul>
  </div>

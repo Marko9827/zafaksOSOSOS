@@ -5,6 +5,7 @@
   left: 0px;
   right: 0px;
   background: var(--bela);
+  z-index: 3;
 }
 
 .navbar-tpl * {
@@ -41,4 +42,39 @@ main{
     min-width: 1100px;
     background: red;
 
+}
+.left-col{
+  width: 250px;
+}
+.navbar-collapse{
+  
+    width: 250px;
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    background: transparent;
+
+}
+
+.navbar-nav{
+  
+    border-radius: 6px;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%), 0 1px 10px 0 rgb(0 0 0 / 10%);
+
+    border-radius: 10px;
+    opacity: 0.9;
+    padding: 0px 10px;
+
+}
+
+.navbar-nav .nav-item a:hover {
+  background:var(--bojPut);
+  color:var(--bela);
+  border-radius:6px;
+  padding:8px 10px;
+  transition:.3s;
+}
+
+.navbar-nav .nav-item a:hover{
+  color: var(--bela) !important; 
 }

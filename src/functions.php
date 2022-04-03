@@ -1,7 +1,8 @@
 <?php
 
-function tpl($what, $page_title){
-    include ROOT."/templates/$what.php";
+function tpl($what, $page_title)
+{
+    include ROOT . "/templates/$what.php";
 }
 function loged()
 {
@@ -11,6 +12,17 @@ function loged()
         return false;
     }
 }
+
+function Specific($what)
+{
+    $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
+    if (mysqli_num_rows($sql)) {
+        while ($row = mysqli_fetch_assoc($sql)) {
+            return $row[$what];
+        }
+    }
+}
+
 function query($sql)
 {
     global $con;
