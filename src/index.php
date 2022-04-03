@@ -8,6 +8,7 @@ include  "./conf.php";
 include "./functions.php";
 
 
+
 if (!empty($_GET['q'])) {
     if ($_GET['q'] == "Alogin") {
         include ROOT . "/ajax/login.php";
@@ -15,15 +16,23 @@ if (!empty($_GET['q'])) {
         session_destroy();
         echo 1;
     } else if ($_GET['q'] == "ispit_prijavi") {
-        if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
-            $true = false;
-            $q = query("INSERT INTO `prijavljeni_ispiti` 
+        if (moneyH() > 500) {
+            if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
+                $true = false;
+                if (intval(Specific("id_studenta", "prijavljeni_ispiti", "id_predmeta")) !== intval($_POST['id_studenta'])) {
+                    $q = query("INSERT INTO `prijavljeni_ispiti` 
                (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`) 
         VALUES ('$_POST[id_studenta]', '$_POST[ispit]', '$_POST[brojPrijava]', '$_POST[napomene]', '$_POST[id_predmeta]');");
-            if ($q) {
-                $true = true;
+                    if ($q) {
+                        $true = true;
+                    }
+                } else {
+                    echo "Ispit je već prijavljen!";
+                }
+                return  $true;
             }
-            return  $true;
+        } else {
+            echo "Nedevoljan iznos(novac) na vašem računu!";
         }
     } else {
     }

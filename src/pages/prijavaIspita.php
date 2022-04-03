@@ -1,5 +1,5 @@
- <div class="col left-col">
-     <p-s>Stanje na računu: 100</p-s>
+ <div class="col left-col left-col-rr">
+     <p-s>Stanje na računu: <?php echo moneyH(); ?></p-s>
      <h1>Ispiti koje mogu da prijavim</h1>
      <table>
          <tr>

@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  color:var(--bojPut);
 }
 
 .navbar{
@@ -179,4 +180,12 @@ tr:nth-child(even) {
 
 .left-col-r{
   max-width: 219px;
+}
+
+.left-col-rr{
+  
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%), 0 1px 10px 0 rgb(0 0 0 / 10%);
+    border-radius: 6px;
+    background: var(--bela);
+
 }

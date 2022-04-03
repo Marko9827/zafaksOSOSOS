@@ -1,4 +1,4 @@
- <div class="col left-col">
+ <div class="col left-col left-col-rr">
      <h1>Prijava ispita</h1>
      <table>
          <tr>
@@ -9,11 +9,11 @@
              <th>Kolokvijum 2</th>
              <th>Zaključna ocena</th>
              <th>Broj prijava</th>
-             <th></th>
+
          </tr>
          <?php
 
-            echo table_ispiti("ispiti_od_studenta");
+            echo table_predmeti("ispiti_od_studenta");
 
             ?>
 

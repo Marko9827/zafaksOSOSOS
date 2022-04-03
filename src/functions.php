@@ -2,7 +2,14 @@
 
 
 function moneyH(){
-    
+    $sql = query("SELECT * FROM racun WHERE indeks = $_SESSION[indeks]");
+    $ggg = 0;
+    if (mysqli_num_rows($sql)) {
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $ggg = intval($row["money"]);
+        }
+    }
+    return $ggg;
 }
 
 function tpl($what, $page_title)
@@ -29,7 +36,7 @@ function Specific($what, $hmm, $id)
     } else if ($hmm == "ispit") {
         $sql = query("SELECT * FROM `aktivniispiti` WHERE `aktivniispiti`.`id_predmeta` = $id");
     } else if ($hmm == "prijavljeni_ispiti"){
-        $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id");
+        $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND ");
     } else {
         $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
     }
@@ -79,7 +86,7 @@ function table_ispiti($sql2)
              <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
              <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
              <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
-             <th><button type='button' class='btn btn-primary' onclick='prijaviIspit($row[id_predmeta])'>Prijavi</button></th>
+             <th><button type='button' class='btn btn-primary' onclick='prijaviIspit( `$row[id_studenta]`, `$row[ispit]`,  `$row[brojPrijava]`,  `$row[napomene]`,  `$row[id_predmeta]`)'>Prijavi</button></th>
                 </tr>";
                     }
                 }
@@ -88,7 +95,42 @@ function table_ispiti($sql2)
     }
     return $tr;
 }
+function vecPrijavljenIspit($gg){
 
+}
+
+function table_predmeti($sql2)
+{
+    $tr = "";
+    if (!empty($sql2)) {
+        if ($sql2 == "ispiti_od_studenta") {
+            $query = "SELECT * FROM `student_predmet` WHERE `student_predmet`.`id_studenta` = $_SESSION[indeks]";
+        }
+
+        $sql = query($query);
+        if (mysqli_num_rows($sql)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $sql_H = query("SELECT * FROM `predmeti` WHERE `predmeti`.`id_predmeta` = $row[id_predmeta]");
+
+                if (mysqli_num_rows($sql_H)) {
+                    while ($row_H = mysqli_fetch_assoc($sql_H)) {
+                        $tr  .= "<tr>
+             <th>$row_H[Ime_predmeta]</th>
+             <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
+             <th>$row_H[Profesor]</th>
+             <th>" . Specific("K1", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
+
+             </tr>";
+                    }
+                }
+            }
+        }
+    }
+    return $tr;
+}
 function menu($active, $type)
 {
     $arr2 = json_decode(file_get_contents("./templates/navBar_tpl.json"));
@@ -105,5 +147,9 @@ function menu($active, $type)
 }
 
 function prijaviIspit($id){
+    if(moneyH() > 500){
     $sql = query("");
+    }else{
+        echo "Nedevoljan iznos(novac) na vašem računu!";
+    }
 }

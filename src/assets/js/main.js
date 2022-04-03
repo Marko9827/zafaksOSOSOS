@@ -4,14 +4,14 @@ $(document).ready(function () {
 
 });
 
-function logout(){
+function logout() {
     $.ajax({
         url: window.root_url + "?q=logout",
         type: "GET",
         success: function (h) {
             if (parseInt(h) == 1) {
                 window.location.reload();
-            } 
+            }
         }
     })
 }
@@ -49,12 +49,16 @@ function alerts(msg) {
 
 }
 
-function prijaviIspit(id){
+function prijaviIspit(id_studenta, ispit, brojPrijava, napomene, id_predmeta) {
     $.ajax({
-        url: window.root_url + "?q=Alogin",
+        url: window.root_url + "?q=ispit_prijavi",
         type: "POST",
         data: {
-            data_id: id
+            id_studenta: id_studenta,
+            ispit: ispit,
+            brojPrijava: brojPrijava,
+            napomene: napomene,
+            id_predmeta: id_predmeta
         },
         success: function (h) {
             if (parseInt(h) == 1) {
