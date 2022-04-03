@@ -1,11 +1,20 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-tpl">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo URL; ?>"> <img src="<?php echo URL; ?>/assets/img/logo.svg" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button">
+            <a class="navbar-brand" href="<?php echo URL; ?>"> <img src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt="Avatar Logo" class="navbar_userIcon rounded-pill">
+            </a>
         </button>
+        <button class="navbar-toggler" type="button">
+            <a class="navbar-brand" href="<?php echo URL; ?>"> <img src="<?php echo URL; ?>/assets/img/logo.svg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> E-Student</a>
+        </button>
+        <div class="buttons">
+            <button class="navbar-toggler" title="Podešavanja" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="bi bi-gear"></span>
+            </button>
+            <button class="navbar-toggler" onclick="logout()" title="Odjavi se" type="button">
+                <span class="bi bi-box-arrow-right"></span>
+            </button>
+        </div>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">

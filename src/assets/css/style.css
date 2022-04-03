@@ -13,6 +13,7 @@
     --ljubivasta: purple;
     --roza_test: #EAD1DC;
     --bela_prozirna: rgb(255 255 255 / 68%);
+    --mdb-blue: var(var(--bojPut));
 }
 
 * {
@@ -36,7 +37,8 @@
     --plava: blue;
     --ljubivasta: purple;
     --roza_test: #EAD1DC;
-    --bela_prozirna: rgb(255 255 255 / 68%);
+    --bela_prozirna: rgb(255 255 255 / 68%); 
+    --mdb-blue: var(var(--bojPut));
 }
 
 html,
@@ -133,3 +135,14 @@ body {
   right: 0px;
 }
 
+.navbar-tpl * {
+  color: var(--bojPut) !important;
+  background: var(--bela);
+}
+
+.navbar_userIcon{
+  width:40px;height: 40px;object-fit: cover;border: 2px solid var(--bojPut);padding: 3px;
+}
+.btn-primary{
+  background-color: var(--bojPut);
+}
