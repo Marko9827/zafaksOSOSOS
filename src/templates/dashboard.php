@@ -16,13 +16,12 @@ tpl("navbar_tpl", "");
     <section id="welcome">
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <?php echo Specific("username");?>
-                </div>
-                <div class="col">
-                    Column
-                </div>
+                <?php
+                include "Sleft_col_tpl.php";
+                ?>
+                <div class="col left-col">
 
+                </div>
             </div>
         </div>
     </section>

@@ -9,10 +9,10 @@
         </button>
         <div class="buttons">
             <button class="navbar-toggler" title="Podešavanja" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="bi bi-gear"></span>
+                <span class="bi icon_b bi-gear"></span>
             </button>
             <button class="navbar-toggler" onclick="logout()" title="Odjavi se" type="button">
-                <span class="bi bi-box-arrow-right"></span>
+                <span class="bi icon_b bi-box-arrow-right"></span>
             </button>
         </div>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">

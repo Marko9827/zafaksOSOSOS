@@ -1,7 +1,9 @@
- <div class="col left-col" >
-     <ul>
+ <div class="col left-col">
+     <div-col> 
+     <ul id="list_col">
          <li>
-             <a>Odjavi se <span class="bi bi-box-arrow-right"></span></a>
+             <a><span class="bi icon_b bi-box-arrow-right"></span> Odjavi se</a>
          </li>
      </ul>
+     </div-col>
  </div>

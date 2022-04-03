@@ -1,5 +1,5 @@
  <div class="col">
-     <ul>
+     <ul id="list_col">
          <li><a href="./"></a></li>
      </ul>
  </div>
