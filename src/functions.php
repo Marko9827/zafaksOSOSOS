@@ -1,7 +1,9 @@
 <?php
 
 
-
+function moneyH(){
+    
+}
 
 function tpl($what, $page_title)
 {
@@ -105,17 +107,3 @@ function menu($active, $type)
 function prijaviIspit($id){
     $sql = query("");
 }
-
-/*
-
-<li>
-                 <a><span class="icon_b"></span> Početna</a>
-             </li>
-             <li>
-                 <a><span class="icon_b"></span> Stara obaveštenja</a>
-             </li>
-             <li>
-                 <a><span class="bi icon_b bi-box-arrow-right"></span> Odjavi se</a>
-             </li>
-
-             */

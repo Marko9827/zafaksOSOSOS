@@ -9,7 +9,7 @@
              <th>Kolokvijum 2</th>
              <th>Zaključna ocena</th>
              <th>Broj prijava</th>
-             <th>Prijavi ispit</th>
+             <th></th>
          </tr>
          <?php
 

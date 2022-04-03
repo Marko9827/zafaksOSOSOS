@@ -1,5 +1,6 @@
  <div class="col left-col">
-     <h1>Prijava ispita</h1>
+     <p-s>Stanje na računu: 100</p-s>
+     <h1>Ispiti koje mogu da prijavim</h1>
      <table>
          <tr>
              <th>Ime ispita</th>
@@ -9,7 +10,7 @@
              <th>Kolokvijum 2</th>
              <th>Zaključna ocena</th>
              <th>Broj prijava</th>
-             <th>Prijavi ispit</th>
+             <th></th>
          </tr>
          <?php
 
