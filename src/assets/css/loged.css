@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 
 .navbar{
   position: fixed;
@@ -38,10 +41,9 @@ main{
     position: fixed;
     top: 127px;
     bottom: 0px;
-    max-width: 1100px;
-    min-width: 1100px;
-    background: red;
-    padding: 15px;
+    max-width: 900px;
+    min-width: 900px;
+     padding: 15px;
 
 }
 .left-col{
@@ -79,10 +81,7 @@ main{
 .navbar-nav .nav-item a:hover{
   color: var(--bela) !important; 
 }
-#list_col{
-
-
-}
+ 
 .left-col{
   width: 250px;
      
@@ -93,6 +92,7 @@ main{
     background:var(--bela);
     padding: 0px;
     color: var(--mdb-body-bg);
+    border-radius: 6px;
 }
 .left-col ul{
   list-style-type:none;
@@ -133,4 +133,50 @@ div-col *{
 
 .left-col ul li{
   padding: 10px;
+}
+
+
+div-breadcrumb  nav{
+  max-width: 900px;
+  margin: auto;
+}
+
+.navbar .container-fluid{
+  max-width: 900px;
+  margin: auto;
+  padding: 0px;
+}
+
+#list_col{
+  max-width: 200px;
+}
+
+#welcome .container{
+  padding: 0px;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 13px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.left-col-r{
+  width: 200px;
+}
+
+.left-col-r{
+  max-width: 219px;
 }

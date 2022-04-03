@@ -19,9 +19,7 @@ tpl("navbar_tpl", "");
                 <?php
                 include "Sleft_col_tpl.php";
                 ?>
-                <div class="col left-col">
-
-                </div>
+                
             </div>
         </div>
     </section>
