@@ -28,7 +28,7 @@ function login() {
                 alerts(h);
             }
         }
-    })
+    });
 }
 
 
@@ -48,3 +48,22 @@ function alerts(msg) {
     }, 5000);
 
 }
+
+function prijaviIspit(id){
+    $.ajax({
+        url: window.root_url + "?q=Alogin",
+        type: "POST",
+        data: {
+            data_id: id
+        },
+        success: function (h) {
+            if (parseInt(h) == 1) {
+                window.location.reload();
+            } else {
+                alerts(h);
+            }
+        }
+    });
+}
+
+

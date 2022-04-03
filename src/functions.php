@@ -19,20 +19,25 @@ function loged()
 function Specific($what, $hmm, $id)
 {
 
+    $ggg = "";
     if ($hmm == "administracija") {
         $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
     } else if ($hmm == "predmet") {
         $sql = query("SELECT * FROM `predmeti` WHERE `predmeti`.`id_predmeta` = $id");
     } else if ($hmm == "ispit") {
         $sql = query("SELECT * FROM `aktivniispiti` WHERE `aktivniispiti`.`id_predmeta` = $id");
+    } else if ($hmm == "prijavljeni_ispiti"){
+        $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id");
     } else {
         $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
     }
     if (mysqli_num_rows($sql)) {
         while ($row = mysqli_fetch_assoc($sql)) {
-            return $row[$what];
+            $ggg = $row[$what];
+            
         }
-    }
+    } 
+    return $ggg;
 }
 
 function query($sql)
@@ -65,16 +70,14 @@ function table_ispiti($sql2)
                 if (mysqli_num_rows($sql_H)) {
                     while ($row_H = mysqli_fetch_assoc($sql_H)) {
                         $tr  .= "<tr>
-                <th>$row_H[Ime_predmeta]</th>
+             <th>$row_H[Ime_predmeta]</th>
              <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
-             <th>$row[Profesor]</th>
+             <th>$row_H[Profesor]</th>
              <th>". Specific("K1", "ispit",$row['id_predmeta']) . "</th>
              <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
-                          <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
-
-              
-             <th>Zaključna ocena</th>
-             <th>Prijavi ispit</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
+             <th><button type='button' class='btn btn-primary' onclick='prijaviIspit($row[id_predmeta])'>Prijavi</button></th>
                 </tr>";
                     }
                 }
@@ -97,6 +100,10 @@ function menu($active, $type)
     }
 
     return $strl;
+}
+
+function prijaviIspit($id){
+    $sql = query("");
 }
 
 /*

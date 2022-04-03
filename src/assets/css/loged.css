@@ -41,8 +41,8 @@ main{
     position: fixed;
     top: 127px;
     bottom: 0px;
-    max-width: 900px;
-    min-width: 900px;
+    max-width: var(--width);
+    min-width: var(--width);
      padding: 15px;
 
 }
@@ -137,12 +137,12 @@ div-col *{
 
 
 div-breadcrumb  nav{
-  max-width: 900px;
+  max-width: var(--width);
   margin: auto;
 }
 
 .navbar .container-fluid{
-  max-width: 900px;
+  max-width: var(--width);
   margin: auto;
   padding: 0px;
 }
