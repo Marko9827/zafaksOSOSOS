@@ -1,0 +1,44 @@
+
+.navbar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background: var(--bela);
+}
+
+.navbar-tpl * {
+  color: var(--bojPut) !important;
+  background: var(--bela);
+}
+
+.navbar_userIcon{
+  width:40px;height: 40px;object-fit: cover;border: 2px solid var(--bojPut);padding: 3px;
+}
+.btn-primary{
+  background-color: var(--bojPut);
+} 
+
+div-breadcrumb {
+  position: fixed;
+  top: 74px;
+  left: 0px;
+  right: 0px;
+  padding: 10px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
+  background: var(--bela);
+  z-index: -1;
+  padding-bottom: 0px;
+}
+
+
+main{
+  
+    position: fixed;
+    top: 127px;
+    bottom: 0px;
+    max-width: 1100px;
+    min-width: 1100px;
+    background: red;
+
+}
