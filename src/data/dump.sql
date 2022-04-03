@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2022 at 09:31 PM
+-- Generation Time: Apr 04, 2022 at 12:18 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `php_rad1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aktivniispiti`
+--
+
+CREATE TABLE `aktivniispiti` (
+  `id_ispita` int(11) NOT NULL,
+  `datumIspita` date NOT NULL,
+  `K1` int(11) NOT NULL DEFAULT '0',
+  `K2` int(11) NOT NULL DEFAULT '0',
+  `ZakljucnaOcena` int(11) NOT NULL DEFAULT '0',
+  `prijaviloIspt` int(11) NOT NULL DEFAULT '0',
+  `id_predmeta` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `aktivniispiti`
+--
+
+INSERT INTO `aktivniispiti` (`id_ispita`, `datumIspita`, `K1`, `K2`, `ZakljucnaOcena`, `prijaviloIspt`, `id_predmeta`) VALUES
+(0, '2022-04-11', 0, 0, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -55,8 +78,36 @@ CREATE TABLE `prijavljeni_ispiti` (
   `id_studenta` int(11) NOT NULL,
   `ispit` int(11) NOT NULL,
   `brojPrijava` int(11) NOT NULL,
-  `napomene` int(11) NOT NULL
+  `napomene` int(11) NOT NULL,
+  `id_predmeta` int(11) NOT NULL,
+  `indeks` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `prijavljeni_ispiti`
+--
+
+INSERT INTO `prijavljeni_ispiti` (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`, `indeks`) VALUES
+(0, 0, 1, 0, 0, 2020200219);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `racun`
+--
+
+CREATE TABLE `racun` (
+  `id` int(11) NOT NULL,
+  `indeks` int(11) NOT NULL,
+  `money` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `racun`
+--
+
+INSERT INTO `racun` (`id`, `indeks`, `money`) VALUES
+(0, 2020200219, 1000);
 
 -- --------------------------------------------------------
 
@@ -89,8 +140,17 @@ INSERT INTO `studenti` (`id`, `indeks`, `username`, `password`, `admin`) VALUES
 CREATE TABLE `student_predmet` (
   `id_student_predmet` int(11) NOT NULL,
   `id_studenta` int(11) NOT NULL,
-  `id_predmeta` int(11) NOT NULL
+  `id_predmeta` int(11) NOT NULL,
+  `polozio_da_ne` int(11) NOT NULL DEFAULT '0',
+  `prijavio` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_predmet`
+--
+
+INSERT INTO `student_predmet` (`id_student_predmet`, `id_studenta`, `id_predmeta`, `polozio_da_ne`, `prijavio`) VALUES
+(0, 2020200219, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -110,6 +170,13 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `aktivniispiti`
+--
+ALTER TABLE `aktivniispiti`
+  ADD PRIMARY KEY (`id_ispita`),
+  ADD UNIQUE KEY `id_ispita` (`id_ispita`);
+
+--
 -- Indexes for table `predmeti`
 --
 ALTER TABLE `predmeti`
@@ -122,6 +189,12 @@ ALTER TABLE `prijavljeni_ispiti`
   ADD PRIMARY KEY (`id_studenta`),
   ADD UNIQUE KEY `id_studenta` (`id_studenta`),
   ADD KEY `id_studenta_2` (`id_studenta`);
+
+--
+-- Indexes for table `racun`
+--
+ALTER TABLE `racun`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `studenti`
