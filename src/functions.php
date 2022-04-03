@@ -36,7 +36,7 @@ function Specific($what, $hmm, $id)
     } else if ($hmm == "ispit") {
         $sql = query("SELECT * FROM `aktivniispiti` WHERE `aktivniispiti`.`id_predmeta` = $id");
     } else if ($hmm == "prijavljeni_ispiti"){
-        $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND ");
+        $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
     } else {
         $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
     }
@@ -95,8 +95,11 @@ function table_ispiti($sql2)
     }
     return $tr;
 }
-function vecPrijavljenIspit($gg){
-
+function vecPrijavljenIspit($id){
+    $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
+    $ggg = 1;
+     
+    return " $_SESSION[indeks]";// mysqli_num_rows($sql);
 }
 
 function table_predmeti($sql2)

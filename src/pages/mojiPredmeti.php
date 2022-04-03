@@ -1,5 +1,5 @@
  <div class="col left-col left-col-rr">
-     <h1>Prijava ispita</h1>
+     <h1>Moji predmeti</h1>
      <table>
          <tr>
              <th>Ime ispita</th>

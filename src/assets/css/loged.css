@@ -187,5 +187,5 @@ tr:nth-child(even) {
     box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%), 0 1px 10px 0 rgb(0 0 0 / 10%);
     border-radius: 6px;
     background: var(--bela);
-
+  overflow: scroll;
 }

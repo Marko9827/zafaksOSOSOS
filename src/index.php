@@ -9,6 +9,8 @@ include "./functions.php";
 
 
 
+
+
 if (!empty($_GET['q'])) {
     if ($_GET['q'] == "Alogin") {
         include ROOT . "/ajax/login.php";
@@ -19,12 +21,12 @@ if (!empty($_GET['q'])) {
         if (moneyH() > 500) {
             if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
                 $true = false;
-                if (intval(Specific("id_studenta", "prijavljeni_ispiti", "id_predmeta")) !== intval($_POST['id_studenta'])) {
+                if (vecPrijavljenIspit("$_POST[id_predmeta]") !== true) {
                     $q = query("INSERT INTO `prijavljeni_ispiti` 
                (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`) 
         VALUES ('$_POST[id_studenta]', '$_POST[ispit]', '$_POST[brojPrijava]', '$_POST[napomene]', '$_POST[id_predmeta]');");
                     if ($q) {
-                        $true = true;
+                        $true = 1;
                     }
                 } else {
                     echo "Ispit je već prijavljen!";
@@ -54,8 +56,10 @@ if (!empty($_GET['q'])) {
             <div-breadcrumb>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Početna</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href=" #">Kontrolna tabla</a></li>
+                        <li class="breadcrumb-item"><a href="./?p=home">Početna</a></li>
+                        <?php if ($_GET['p'] !== "home") { ?>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="./?p=<?php echo $_GET['p'];?>">Kontrolna tabla</a></li>
+                        <?php } ?>
                     </ol>
                 </nav>
             </div-breadcrumb>
@@ -80,6 +84,8 @@ if (!empty($_GET['q'])) {
             <script src="<?php echo URL; ?>/app.js"></script>
             <script src="<?php echo URL; ?>/assets/js/main.js"></script>
 <?php
+        } else {
+            header("location: ./?p=home");
         }
     } else {
         include  ROOT . "/log_reg/login.php";
