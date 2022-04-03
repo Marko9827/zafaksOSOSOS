@@ -1,16 +1,32 @@
-<?php     tpl("header_tpl", "E-student, Kontrolna tabla "); 
+<?php 
+tpl("header_tpl", "E-student, Kontrolna tabla ");
+tpl("navbar_tpl", ""); 
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            One of three columns
+ 
+<main>
+
+    <p onclick="logout();">DOJAVI SE - TEST</p>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <h2>Heading one</h2>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <h2>Heading Two</h2>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <h2>Heading Three</h2>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <h2>Heading Four</h2>
+            </div>
+
         </div>
-        <div class="col-sm">
-            One of three columns
-        </div>
-        <div class="col-sm">
-            One of three columns
-        </div>
+
     </div>
-</div>
+</main>
+
+<script src="./app.js"></script>
+<script src="./assets/js/main.js"></script>

@@ -14,5 +14,5 @@
     <link href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>

@@ -8,6 +8,7 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'php_rad1');
 define("ROOT",__DIR__);
+define("URL", "$_SERVER[HTTP_ORIGIN]/zaFaksOSOSO/zafaksOSOSOS/src/");
 
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 

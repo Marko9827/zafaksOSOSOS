@@ -1,0 +1,15 @@
+<IfModule mod_autoindex.c>
+	Options -Indexes
+</IfModule>
+
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+php_value short_open_tag 1

@@ -4,6 +4,18 @@ $(document).ready(function () {
 
 });
 
+function logout(){
+    $.ajax({
+        url: window.root_url + "?q=logout",
+        type: "GET",
+        success: function (h) {
+            if (parseInt(h) == 1) {
+                window.location.reload();
+            } 
+        }
+    })
+}
+
 function login() {
     $.ajax({
         url: window.root_url + "?q=Alogin",
