@@ -13,7 +13,7 @@
          </tr>
          <?php
 
-            echo table_predmeti("ispiti_od_studenta");
+            echo table_ispiti("ispiti_od_studenta");
 
             ?>
 

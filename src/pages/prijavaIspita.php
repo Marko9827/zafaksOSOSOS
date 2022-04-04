@@ -14,7 +14,7 @@
          </tr>
          <?php
 
-            echo table_ispiti("ispiti_od_studenta");
+            echo table_ispiti("prijavi");
 
             ?>
 
@@ -31,6 +31,7 @@
              <th>Kolokvijum 2</th>
              <th>Zaključna ocena</th>
              <th>Broj prijava</th>
+             
          </tr>
          <?php
 

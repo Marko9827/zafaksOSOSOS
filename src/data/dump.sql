@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 04, 2022 at 08:04 PM
+-- Generation Time: Apr 04, 2022 at 10:17 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -142,15 +142,16 @@ CREATE TABLE `student_predmet` (
   `id_studenta` int(11) NOT NULL,
   `id_predmeta` int(11) NOT NULL,
   `polozio_da_ne` int(11) NOT NULL DEFAULT '0',
-  `prijavio` int(11) NOT NULL DEFAULT '0'
+  `prijavio` int(11) NOT NULL DEFAULT '0',
+  `brojPrijava` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student_predmet`
 --
 
-INSERT INTO `student_predmet` (`id_student_predmet`, `id_studenta`, `id_predmeta`, `polozio_da_ne`, `prijavio`) VALUES
-(0, 2020200219, 0, 0, 0);
+INSERT INTO `student_predmet` (`id_student_predmet`, `id_studenta`, `id_predmeta`, `polozio_da_ne`, `prijavio`, `brojPrijava`) VALUES
+(0, 2020200219, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 

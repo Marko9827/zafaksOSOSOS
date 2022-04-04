@@ -1,7 +1,8 @@
 <?php
 
 
-function moneyH(){
+function moneyH()
+{
     $sql = query("SELECT * FROM racun WHERE indeks = $_SESSION[indeks]");
     $ggg = 0;
     if (mysqli_num_rows($sql)) {
@@ -35,7 +36,7 @@ function Specific($what, $hmm, $id)
         $sql = query("SELECT * FROM `predmeti` WHERE `predmeti`.`id_predmeta` = $id");
     } else if ($hmm == "ispit") {
         $sql = query("SELECT * FROM `aktivniispiti` WHERE `aktivniispiti`.`id_predmeta` = $id");
-    } else if ($hmm == "prijavljeni_ispiti"){
+    } else if ($hmm == "prijavljeni_ispiti") {
         $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
     } else {
         $sql = query("SELECT * FROM users WHERE indeks = $_SESSION[indeks] ");
@@ -43,9 +44,8 @@ function Specific($what, $hmm, $id)
     if (mysqli_num_rows($sql)) {
         while ($row = mysqli_fetch_assoc($sql)) {
             $ggg = $row[$what];
-            
         }
-    } 
+    }
     return $ggg;
 }
 
@@ -70,9 +70,11 @@ function table_ispiti($sql2)
         if ($sql2 == "ispiti_od_studenta") {
             $query = "SELECT * FROM `student_predmet` WHERE `student_predmet`.`id_studenta` = $_SESSION[indeks]";
         }
-        if ($sql2 == "prijavljeni"
-        ) {
+        if ($sql2 == "prijavljeni") {
             $query = "SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`indeks` =  $_SESSION[indeks]";
+        }
+        if ($sql2 == "prijavi") {
+            $query = "SELECT * FROM `student_predmet` WHERE `student_predmet`.`id_studenta` = $_SESSION[indeks]";
         }
         $sql = query($query);
         if (mysqli_num_rows($sql)) {
@@ -81,7 +83,7 @@ function table_ispiti($sql2)
 
                 if (mysqli_num_rows($sql_H)) {
                     while ($row_H = mysqli_fetch_assoc($sql_H)) {
-                          if ($sql2 == "prijavljeni"){
+                        if ($sql2 == "prijavljeni") {
                             $tr  .= "<tr>
              <th>$row_H[Ime_predmeta]</th>
              <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
@@ -93,7 +95,19 @@ function table_ispiti($sql2)
             
            
              </tr>";
-                          } else{
+                        } else if ($sql2 == "ispiti_od_studenta") {
+                            $tr  .= "<tr>
+             <th>$row_H[Ime_predmeta]</th>
+             <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
+             <th>$row_H[Profesor]</th>
+             <th>" . Specific("K1", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . $row['brojPrijava'] . "</th>
+            
+           
+             </tr>";
+                        } else if ($sql2 == "prijavi") {
                             $tr  .= "<tr>
              <th>$row_H[Ime_predmeta]</th>
              <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
@@ -106,8 +120,33 @@ function table_ispiti($sql2)
              <th><button type='button' class='btn btn-primary' onclick='prijaviIspit( `$row[id_studenta]`, `$row[ispit]`,  `$row[brojPrijava]`,  `$row[napomene]`,  `$row[id_predmeta]`)'>Prijavi</button></th>
           
              </tr>";
-                          }
-               
+                        } else if ($sql2 == "prijaviIspit") {
+                            $tr  .= "<tr>
+             <th>$row_H[Ime_predmeta]</th>
+             <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
+             <th>$row_H[Profesor]</th>
+             <th>" . Specific("K1", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
+            
+             <th><button type='button' class='btn btn-primary' onclick='prijaviIspit( `$row[id_studenta]`, `$row[ispit]`,  `$row[brojPrijava]`,  `$row[napomene]`,  `$row[id_predmeta]`)'>Prijavi</button></th>
+          
+             </tr>";
+                        } else {
+                            $tr  .= "<tr>
+             <th>$row_H[Ime_predmeta]</th>
+             <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
+             <th>$row_H[Profesor]</th>
+             <th>" . Specific("K1", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
+            
+             <th><button type='button' class='btn btn-primary' onclick='prijaviIspit( `$row[id_studenta]`, `$row[ispit]`,  `$row[brojPrijava]`,  `$row[napomene]`,  `$row[id_predmeta]`)'>Prijavi</button></th>
+          
+             </tr>";
+                        }
                     }
                 }
             }
@@ -115,11 +154,12 @@ function table_ispiti($sql2)
     }
     return $tr;
 }
-function vecPrijavljenIspit($id){
+function vecPrijavljenIspit($id)
+{
     $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
     $ggg = 1;
-     
-    return " $_SESSION[indeks]";// mysqli_num_rows($sql);
+
+    return " $_SESSION[indeks]"; // mysqli_num_rows($sql);
 }
 
 function table_predmeti($sql2)
@@ -129,9 +169,8 @@ function table_predmeti($sql2)
         if ($sql2 == "ispiti_od_studenta") {
             $query = "SELECT * FROM `student_predmet` WHERE `student_predmet`.`id_studenta` = $_SESSION[indeks]";
         }
-        if($sql2 == "prijavljeni"){
+        if ($sql2 == "prijavljeni") {
             $query = "SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`indeks` =  $_SESSION[indeks]";
-
         }
 
         $sql = query($query);
@@ -173,10 +212,11 @@ function menu($active, $type)
     return $strl;
 }
 
-function prijaviIspit($id){
-    if(moneyH() > 500){
-    $sql = query("");
-    }else{
+function prijaviIspit($id)
+{
+    if (moneyH() > 500) {
+        $sql = query("");
+    } else {
         echo "Nedevoljan iznos(novac) na vašem računu!";
     }
 }
