@@ -29,7 +29,7 @@ div-breadcrumb {
   top: 74px;
   left: 0px;
   right: 0px;
-  padding: 10px;
+  padding: 10px 15px;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
   background: var(--bela);
   z-index: -1;
@@ -38,14 +38,14 @@ div-breadcrumb {
 
 
 main{
-  
-    position: fixed;
-    top: 127px;
-    bottom: 0px;
-    max-width: var(--width);
-    min-width: var(--width);
-     padding: 15px;
-
+  position: fixed;
+  top: 127px;
+  bottom: 0px;
+  max-width: var(--width);
+  min-width: var(--width);
+  padding: 15px;
+  overflow: scroll;
+  display: grid;
 }
 .left-col{
   width: 250px;
@@ -111,12 +111,15 @@ div-col *{
 }
 
 
-#list_col li a:hover{
+#list_col li:hover{
   background:var(--bojPut);
   color:var(--bela);
-  border-radius:6px;
-  padding:8px 10px;
+  border-radius:6px; 
   transition:.3s;
+}
+
+#list_col li:hover *{
+  color: var(--bela);
 }
 
 #list_col .icon_b{
@@ -188,4 +191,32 @@ tr:nth-child(even) {
     border-radius: 6px;
     background: var(--bela);
   overflow: scroll;
+}
+
+
+.breadcrumb a{
+  color:var(--bojaPut);
+}
+
+
+@media only screen and (max-width: 500px) {
+  .row{
+    display:grid !important;
+    width: 100%;
+    margin: 0px;
+  }
+
+  :root{
+    --width:100%;
+  }
+
+  .left-col-r{
+    display:none;
+  }
+
+  .left-col-rr{
+    width:100%;
+    min-height:250px;
+    height:fit-content;
+  }
 }

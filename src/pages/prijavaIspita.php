@@ -19,4 +19,27 @@
             ?>
 
      </table>
+
+     <br><br>
+     <h1>Prijavljeni ispiti</h1>
+     <table>
+         <tr>
+             <th>Ime ispita</th>
+             <th>Datum ispita</th>
+             <th>Profesor</th>
+             <th>Kolokvijum 1</th>
+             <th>Kolokvijum 2</th>
+             <th>Zaključna ocena</th>
+             <th>Broj prijava</th>
+         </tr>
+         <?php
+
+            echo table_ispiti("prijavljeni");
+
+            ?>
+
+     </table>
+<bR>
+<br>
+<br>
  </div>

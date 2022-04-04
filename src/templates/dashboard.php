@@ -15,7 +15,7 @@ tpl("navbar_tpl", "");
 
     <section id="welcome">
         <div class="container">
-            <div class="row">
+            <div class="row row-style-box">
                 <?php
                 include "Sleft_col_tpl.php";
                 ?>

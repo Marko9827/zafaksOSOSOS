@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 04, 2022 at 12:55 AM
+-- Generation Time: Apr 04, 2022 at 08:04 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -107,7 +107,7 @@ CREATE TABLE `racun` (
 --
 
 INSERT INTO `racun` (`id`, `indeks`, `money`) VALUES
-(0, 2020200219, 1000);
+(0, 2020200219, 10);
 
 -- --------------------------------------------------------
 

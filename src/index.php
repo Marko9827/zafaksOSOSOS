@@ -31,7 +31,7 @@ if (!empty($_GET['q'])) {
                 } else {
                     echo "Ispit je već prijavljen!";
                 }
-                return  $true;
+                echo  $true;
             }
         } else {
             echo "Nedevoljan iznos(novac) na vašem računu!";
