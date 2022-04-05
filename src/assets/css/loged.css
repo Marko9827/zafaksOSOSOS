@@ -223,3 +223,27 @@ tr:nth-child(even) {
     height:fit-content;
   }
 }
+
+table input, table textarea{
+  border: none;
+  outline: 2px solid var(--bojaPut);
+}
+.breadcrumb-item.active{text-transform: capitalize;}
+
+.administracija_img{
+  
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid var(--bojPut);
+    padding: 4px;
+
+}
+
+.administracija_img:hover,
+.table input:hover{
+  transform: scale(1.5);
+  border-style: dashed !important;
+  padding: 6px !important;
+}

@@ -2,7 +2,8 @@
 
 
 if (!isset($_POST['indeks'], $_POST['password'])) {
-    exit("Popunite polja!");
+    echo "Popunite polja!";
+    exit();
 } else {
     $sql = query("SELECT * FROM `studenti` WHERE `indeks` = $_POST[indeks]");
 
@@ -15,10 +16,12 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
                 $_SESSION['indeks'] = $row['indeks'];
                 echo 1;
             } else {
-                exit("Šifra nije tačna!");
+                echo "Šifra nije tačna!";
+                exit();
             }
         } else {
-            exit("Šifra nije tačna!");
+            echo "Šifra nije tačna!";
+            exit();
         }
     }
 }

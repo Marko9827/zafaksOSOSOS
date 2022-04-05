@@ -1,21 +1,19 @@
  <div class="col left-col left-col-rr">
-     <h1>Moji predmeti</h1>
-     <table>
-         <tr>
-             <th>Ime ispita</th>
-             <th>Datum ispita</th>
-             <th>Profesor</th>
-             <th>Kolokvijum 1</th>
-             <th>Kolokvijum 2</th>
-             <th>Zaključna ocena</th>
-             <th>Broj prijava</th>
+     <h1>Administracija</h1>
+     <p>Menjanje informacija je omogućeno u tabeli, levo.</p>
+     <form onsubmit="return false;">
+         <table>
+             <tr>
+                 <th>Slika</th>
+                 <th><img class="administracija_img" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" /></th>
+             </tr>
+             <tr>
+                 <th>Ime i prezime</th>
+                 <th><input type="name" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
+             </tr>
 
-         </tr>
-         <?php
+         </table>
 
-            echo table_ispiti("ispiti_od_studenta");
-
-            ?>
-
-     </table>
+         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="">Prijavi me</button>
+     </form>
  </div>

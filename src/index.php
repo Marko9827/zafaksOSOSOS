@@ -58,7 +58,7 @@ if (!empty($_GET['q'])) {
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./?p=home">Početna</a></li>
                         <?php if ($_GET['p'] !== "home") { ?>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="./?p=<?php echo $_GET['p']; ?>">Kontrolna tabla</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="./?p=<?php echo $_GET['p']; ?>"><?php echo $_GET['p']; ?></a></li>
                         <?php } ?>
                     </ol>
                 </nav>

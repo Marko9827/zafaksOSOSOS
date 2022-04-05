@@ -63,6 +63,19 @@ function query($sql)
     return false;
 }
 
+function student($what)
+{
+    $tr = ""; 
+    $query = "SELECT * FROM `studenti` WHERE `studenti`.`indeks` = $_SESSION[indeks]";
+    $sql = query($query);
+    if (mysqli_num_rows($sql)) {
+        while ($row = mysqli_fetch_assoc($sql)) {
+            $tr = $row[$what];
+        }
+    }
+    return $tr;
+}
+
 function table_ispiti($sql2)
 {
     $tr = "";
@@ -158,7 +171,7 @@ function vecPrijavljenIspit($id)
 {
     $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
     $ggg = false;
-    if(mysqli_num_rows($sql) > 0){
+    if (mysqli_num_rows($sql) > 0) {
         $ggg = true;
     }
 
