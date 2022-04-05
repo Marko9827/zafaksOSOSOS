@@ -13,3 +13,4 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 php_value short_open_tag 1
+ 

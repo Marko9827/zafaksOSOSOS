@@ -1,12 +1,16 @@
 <?php
 tpl("header_tpl", "E-student, Kontrolna tabla ");
 tpl("navbar_tpl", "");
+
+$p = $_GET['p'];
 ?>
 <div-breadcrumb>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Početna</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href=" #">Kontrolna tabla</a></li>
+            <li class="breadcrumb-item"><a href="/?p=<% $p %>" title="Idi na: <% $p %> ">Početna</a></li>
+            <?php if ($_GET['p'] !== "home") { ?>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/?p=<% $p %>">Kontrolna tabla</a></li>
+            <?php } ?>
         </ol>
     </nav>
 </div-breadcrumb>
@@ -19,7 +23,7 @@ tpl("navbar_tpl", "");
                 <?php
                 include "Sleft_col_tpl.php";
                 ?>
-                
+
             </div>
         </div>
     </section>

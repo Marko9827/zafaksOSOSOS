@@ -14,12 +14,11 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['indeks'] = $row['indeks'];
                 echo 1;
-            } else{
+            } else {
                 exit("Šifra nije tačna!");
             }
-        }else{
+        } else {
             exit("Šifra nije tačna!");
-
         }
     }
 }

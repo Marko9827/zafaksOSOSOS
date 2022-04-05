@@ -157,9 +157,13 @@ function table_ispiti($sql2)
 function vecPrijavljenIspit($id)
 {
     $sql = query("SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_predmeta` = $id AND `prijavljeni_ispiti`.`indeks` = $_SESSION[indeks]");
-    $ggg = 1;
+    $ggg = false;
+    if(mysqli_num_rows($sql) > 0){
+        $ggg = true;
+    }
 
-    return " $_SESSION[indeks]"; // mysqli_num_rows($sql);
+    return  $ggg;
+    // " $_SESSION[indeks]"; // mysqli_num_rows($sql);
 }
 
 function table_predmeti($sql2)

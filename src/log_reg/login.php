@@ -12,6 +12,7 @@ tpl("header_tpl", "E-student Prijava ");
             <label for="inputEmail" class="sr-only">Indeks</label>
             <input type="number" id="inputEmail" maxlength="10" class="form-control" placeholder="Indeks" name="indeks" required autofocus>
         </div>
+        <br>
         <div class="form-group">
             <label for="inputPassword" class="sr-only">Šifra</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Šifra" name="password" required>

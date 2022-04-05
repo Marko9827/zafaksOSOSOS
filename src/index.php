@@ -2,8 +2,6 @@
 
 #include "./vendor/autoload.php";
 
-
-
 include  "./conf.php";
 include "./functions.php";
 
@@ -18,23 +16,25 @@ if (!empty($_GET['q'])) {
         session_destroy();
         echo 1;
     } else if ($_GET['q'] == "ispit_prijavi") {
-        if (moneyH() > 500) {
-            if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
-                $true = false;
-                if (vecPrijavljenIspit("$_POST[id_predmeta]") !== true) {
+        if (vecPrijavljenIspit("$_POST[id_predmeta]") !== true) {
+
+            if (moneyH() > 500) {
+                if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
+                    $true = false;
                     $q = query("INSERT INTO `prijavljeni_ispiti` 
                (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`) 
         VALUES ('$_POST[id_studenta]', '$_POST[ispit]', '$_POST[brojPrijava]', '$_POST[napomene]', '$_POST[id_predmeta]');");
                     if ($q) {
                         $true = 1;
                     }
-                } else {
-                    echo "Ispit je već prijavljen!";
+
+                    echo  $true;
                 }
-                echo  $true;
+            } else {
+                echo "Nedevoljan iznos(novac) na vašem računu!";
             }
         } else {
-            echo "Nedevoljan iznos(novac) na vašem računu!";
+            echo "Ispit je već prijavljen!";
         }
     } else {
     }
@@ -58,7 +58,7 @@ if (!empty($_GET['q'])) {
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="./?p=home">Početna</a></li>
                         <?php if ($_GET['p'] !== "home") { ?>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="./?p=<?php echo $_GET['p'];?>">Kontrolna tabla</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="./?p=<?php echo $_GET['p']; ?>">Kontrolna tabla</a></li>
                         <?php } ?>
                     </ol>
                 </nav>

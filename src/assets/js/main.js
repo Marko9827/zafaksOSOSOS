@@ -64,7 +64,7 @@ function prijaviIspit(id_studenta, ispit, brojPrijava, napomene, id_predmeta) {
             if (parseInt(h) == 1) {
                 window.location.reload();
             } else {
-                alerts(h);
+                alert(h);
             }
         }
     });

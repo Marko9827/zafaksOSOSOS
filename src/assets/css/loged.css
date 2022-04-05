@@ -16,7 +16,10 @@
   color: var(--bojPut) !important;
   background: var(--bela);
 }
-
+#collapsibleNavbar  .bi{
+  width: 25px !important;
+  padding-right: 10px;
+}
 .navbar_userIcon{
   width:40px;height: 40px;object-fit: cover;border: 2px solid var(--bojPut);padding: 3px;
 }
@@ -32,7 +35,7 @@ div-breadcrumb {
   padding: 10px 15px;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
   background: var(--bela);
-  z-index: -1;
+  z-index: 1;
   padding-bottom: 0px;
 }
 
