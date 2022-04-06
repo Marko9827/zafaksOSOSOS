@@ -6,8 +6,8 @@ tpl("header_tpl", "E-student Prijava ");
 <body class="text-center">
 
     <form class="form-signin" onsubmit="return false;">
-        <img class="mb-4" src="./assets/img/logo.svg" alt="svg_logo" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">E-Student</h1>
+        <img class="mb-4 pen" src="./assets/img/logo.svg" alt="svg_logo" width="72" height="72">
+        <h1 class="h3 mb-3  pen font-weight-normal">E-Student</h1>
         <div class="form-group">
             <label for="inputEmail" class="sr-only">Indeks</label>
             <input type="number" id="inputEmail" maxlength="10" class="form-control" placeholder="Indeks" name="indeks" required autofocus>

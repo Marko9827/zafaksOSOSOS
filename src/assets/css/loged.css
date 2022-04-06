@@ -247,3 +247,11 @@ table input, table textarea{
   border-style: dashed !important;
   padding: 6px !important;
 }
+
+.table_btns{
+    width: fit-content;
+    margin: 15px 0px;
+    float: right;
+}
+
+

@@ -14,6 +14,6 @@
 
          </table>
 
-         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="">Prijavi me</button>
+         <button class="btn btn-lg  table_btns btn-primary btn-block" type="submit" onclick="">Sačuvaj izmene</button>
      </form>
  </div>

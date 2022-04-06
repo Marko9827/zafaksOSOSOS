@@ -130,3 +130,12 @@ body {
   padding:15px 0px;
 }
  
+
+
+.btn-primary{
+  background-color: var(--bojPut);
+} 
+
+.pen{
+  pointer-events: none;
+}

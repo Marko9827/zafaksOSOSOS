@@ -214,6 +214,12 @@ function table_predmeti($sql2)
     }
     return $tr;
 }
+
+function Lang($word){
+    include "./lang/$_SESSION[lang].php";
+    return $arr[$word];
+}
+
 function menu($active, $type)
 {
     $arr2 = json_decode(file_get_contents("./templates/navBar_tpl.json"));
