@@ -12,6 +12,7 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
             if ($_POST['password'] == $row['password']) {
                 session_regenerate_id();
                 $_SESSION['logged'] = true;
+                $_SESSION['lang'] = $row['lang'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['indeks'] = $row['indeks'];
                 echo 1;

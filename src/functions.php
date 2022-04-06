@@ -217,7 +217,7 @@ function table_predmeti($sql2)
 
 function Lang($word){
     include "./lang/$_SESSION[lang].php";
-    return $arr[$word];
+    return $lang[$word];
 }
 
 function menu($active, $type)
