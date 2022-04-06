@@ -6,19 +6,16 @@
              <tr>
                  <th>Slika</th>
                  <th><img class="administracija_img" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" />
-                <input type="file" accept="image/*"/>
-                </th>
+                     <input style="display: none;" type="file" accept="image/*" />
+                 </th>
              </tr>
              <tr>
                  <th>Ime i prezime</th>
                  <th><input type="name" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
              </tr>
              <tr>
-                 <th>Jezik interfejsa</th>
-                 <th><select name="lang_options">
-                         <option value="en">Engleski</option>
-                         <option value="rs">Srpski</option>
-                     </select></th>
+                 <th>Indeks</th>
+                 <th><input type="number" value="<?php echo student("indeks"); ?>" placeholder="Ime i prezime" required /></th>
              </tr>
              <tr>
                  <th>Jezik interfejsa</th>
@@ -26,6 +23,10 @@
                          <option value="en">Engleski</option>
                          <option value="rs">Srpski</option>
                      </select></th>
+             </tr>
+             <tr>
+                 <th>Datum rođenja</th>
+                 <th><input type="date" name="date_pnt" /></th>
              </tr>
          </table>
 

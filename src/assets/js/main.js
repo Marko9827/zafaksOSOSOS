@@ -70,4 +70,6 @@ function prijaviIspit(id_studenta, ispit, brojPrijava, napomene, id_predmeta) {
     });
 }
 
-
+function change(e){
+    
+}
