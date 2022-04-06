@@ -12,6 +12,10 @@ include "./functions.php";
 if (!empty($_GET['q'])) {
     if ($_GET['q'] == "Alogin") {
         include ROOT . "/ajax/login.php";
+    } else if ($_GET['q'] == "administracija") {
+        if (loged()) {
+            include ROOT . "/ajax/administracija.php";
+        }
     } else if ($_GET['q'] == "logout") {
         session_destroy();
         echo 1;

@@ -238,6 +238,7 @@ table input, table textarea{
     border-radius: 16px;
     border: 2px solid var(--bojPut);
     padding: 4px;
+    transition: .3s !important;
 
 }
 
@@ -255,3 +256,6 @@ table input, table textarea{
 }
 
 
+.administracija_img:hover{
+  object-fit: scale-down;
+}

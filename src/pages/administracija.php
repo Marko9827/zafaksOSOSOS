@@ -1,12 +1,12 @@
  <div class="col left-col left-col-rr">
      <h1><?php echo Lang("administracija"); ?> </h1>
      <p>Menjanje informacija je omogućeno u tabeli, levo.</p>
-     <form onsubmit="return false;">
+     <form onsubmit="return false;" id="administracija_form_ha">
          <table>
              <tr>
                  <th>Slika</th>
-                 <th><img class="administracija_img" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" />
-                     <input style="display: none;" type="file" accept="image/*" />
+                 <th><img class="administracija_img" id="administracija_img" onclick=" document.getElementById('administracija_img_file').click();" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" />
+                     <input id="administracija_img_file" style="display: none;" type="file" onchange="changeH(this);" accept="image/*" />
                  </th>
              </tr>
              <tr>

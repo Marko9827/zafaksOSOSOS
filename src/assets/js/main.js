@@ -70,6 +70,32 @@ function prijaviIspit(id_studenta, ispit, brojPrijava, napomene, id_predmeta) {
     });
 }
 
-function change(e){
-    
+function changeH(event) {
+    var administracija_img_file = document.getElementById("administracija_img"),
+        file = $("#administracija_img_file").get(0).files[0];
+
+    if (file) {
+
+        var reader = new FileReader();
+
+        reader.onload = function (eh) {
+            var src = eh.target.result;
+            administracija_img_file.src = src;
+        }
+
+        reader.readAsDataURL(file);
+    }
+
+
+}
+
+function administracijaSAVE(){
+    $.ajax({
+        url: window.root_url + "?q=administracija",
+        type:"POST",
+        data: $("#administracija_form_ha").serialize(), 
+        success:function(v){
+
+        }
+    })
 }
