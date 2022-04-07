@@ -11,25 +11,29 @@
              </tr>
              <tr>
                  <th>Ime i prezime</th>
-                 <th><input type="name" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
+                 <th><input type="username" name="username" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
              </tr>
              <tr>
                  <th>Indeks</th>
-                 <th><input type="number" value="<?php echo student("indeks"); ?>" placeholder="Ime i prezime" required /></th>
+                 <th><input type="number" name="indeks" value="<?php echo student("indeks"); ?>" placeholder="Indeks" required /></th>
              </tr>
              <tr>
                  <th>Jezik interfejsa</th>
-                 <th><select name="lang_options">
+                 <th><select name="lang_options" required>
                          <option value="en">Engleski</option>
                          <option value="rs">Srpski</option>
                      </select></th>
              </tr>
              <tr>
                  <th>Datum rođenja</th>
-                 <th><input type="date" name="date_pnt" /></th>
+                 <th><input type="date" name="datumRodjenja" placeholder="Datum rođenja" value="<?php echo student("datumRodjenja"); ?>" name="date_pnt" required /></th>
+             </tr>
+             <tr>
+                 <th>Upisao</th>
+                 <th><input type="number" value="<?php echo student("upisao"); ?>" placeholder="Upisao" required /></th>
              </tr>
          </table>
 
-         <button class="btn btn-lg  table_btns btn-primary btn-block" type="submit" onclick="">Sačuvaj izmene</button>
+         <button class="btn btn-lg  table_btns btn-primary btn-block" type="submit" onclick="sumbitbtn();">Sačuvaj izmene</button>
      </form>
  </div>

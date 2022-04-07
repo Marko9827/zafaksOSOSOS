@@ -5,4 +5,4 @@
 # Instalacija
 - Ekstractovati projekat
 - ZAFAKSOSOSOS
-- uci na url [ domain/ZAFAKSOSOSOS/src/ ]
+- uci na url [ {{vaš domain}}/ZAFAKSOSOSOS/ ]

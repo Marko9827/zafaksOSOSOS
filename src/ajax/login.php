@@ -11,6 +11,7 @@ if (!isset($_POST['indeks'], $_POST['password'])) {
         if ($row = mysqli_fetch_assoc($sql)) {
             if ($_POST['password'] == $row['password']) {
                 session_regenerate_id();
+                $_SESSION['user_id'] = $row['id'];
                 $_SESSION['logged'] = true;
                 $_SESSION['lang'] = $row['lang'];
                 $_SESSION['username'] = $row['username'];
