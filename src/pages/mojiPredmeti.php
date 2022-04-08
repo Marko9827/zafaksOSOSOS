@@ -1,5 +1,5 @@
  <div class="col left-col left-col-rr">
-     <h1>Moji predmeti</h1>
+     <h1><?php echo names($_GET['p']); ?> </h1>
      <table>
          <tr>
              <th>Ime ispita</th>

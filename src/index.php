@@ -19,27 +19,28 @@ if (!empty($_GET['q'])) {
     } else if ($_GET['q'] == "logout") {
         session_destroy();
         echo 1;
-    } else if ($_GET['q'] == "ispit_prijavi") {
-        if (vecPrijavljenIspit("$_POST[id_predmeta]") !== true) {
-
-            if (moneyH() > 500) {
-                if (!isset($_POST['id_studenta'], $_POST['id_predmeta'])) {
-                    $true = false;
-                    $q = query("INSERT INTO `prijavljeni_ispiti` 
-               (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`) 
-        VALUES ('$_POST[id_studenta]', '$_POST[ispit]', '$_POST[brojPrijava]', '$_POST[napomene]', '$_POST[id_predmeta]');");
-                    if ($q) {
-                        $true = 1;
-                    }
-
-                    echo  $true;
+    } else if ($_GET['q'] == "uploader") {
+        try {
+            $imgsPath =  __DIR__."/uploads/profiles/";
+            foreach ($_FILES as $key) {
+                if ($key['error'] == UPLOAD_ERR_OK) {
+                    $id_nime =  time() . rand();
+                    $name = $key['name'];
+                    $temp = $key['tmp_name'];
+                    $size = ($key['size'] / 1000000) . "Kb";
+                    $name = preg_replace('#[^a-z.0-9]#i', '', $name);
+                    $post_kaboom = explode(".", $name);
+                    $post_fileExt = end($post_kaboom);
+                    $name = "$_SESSION[indeks].png";
+                    move_uploaded_file($temp, $imgsPath . $name);
                 }
-            } else {
-                echo "Nedevoljan iznos(novac) na vašem računu!";
             }
-        } else {
-            echo "Ispit je već prijavljen!";
+
+            //  }
+        } catch (Exception $e) {
         }
+    } else if ($_GET['q'] == "ispit_prijavi") {
+       include  "./ajax/ispit_prijavi.php";
     } else {
     }
 } else if (!empty($_GET['image'])) {

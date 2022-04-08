@@ -51,15 +51,11 @@ function alerts(msg) {
 
 }
 
-function prijaviIspit(id_studenta, ispit, brojPrijava, napomene, id_predmeta) {
+function prijaviIspit(id_predmeta) {
     $.ajax({
         url: window.root_url + "?q=ispit_prijavi",
         type: "POST",
-        data: {
-            id_studenta: id_studenta,
-            ispit: ispit,
-            brojPrijava: brojPrijava,
-            napomene: napomene,
+        data:{
             id_predmeta: id_predmeta
         },
         success: function (h) {
@@ -91,8 +87,8 @@ function changeH(event) {
 
 }
 
-function notifikacije(){
-    
+function notifikacije() {
+
 }
 
 function red(what) {
@@ -142,14 +138,16 @@ function sumbitbtn() {
 
             $.ajax({
                 url: window.root_url + "?q=uploader",
-                type: 'post',
+                cache: false,
+                dataType: "text",
                 data: fd,
                 contentType: false,
                 processData: false,
+                type: "post",
                 success: function (response) {
-                    if (response != 0) {
-                        administracijaSAVE();
-                    }
+
+                    administracijaSAVE();
+
                 },
             });
         } else {

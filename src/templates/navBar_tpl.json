@@ -24,12 +24,12 @@
     {
         "icon": "bi icon_b bi-list-ol",
         "title": "Ispiti",
-        "href": "javascript:logout();"
+        "href": "./?p=ispiti"
     },
     {
         "icon": "bi icon_b bi-box-arrow-right",
         "title": "Upisi",
-        "href": "javascript:logout();"
+        "href": "./?p=upisi"
     },
     {
         "icon": "bi icon_b bi-wrench-adjustable-circle",

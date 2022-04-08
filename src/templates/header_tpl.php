@@ -12,9 +12,14 @@
 
 
     <?php
-    if (loged()) { ?>
+    if (loged()) {
+
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+    ?>
         <meta name="robots" content="noindex, nofollow">
         <meta name="googlebot" content="noindex">
         <link href="<?php echo URL; ?>/assets/css/loged.css" rel="stylesheet">
-    <?php } ?>
+     <?php } ?>
 </head>

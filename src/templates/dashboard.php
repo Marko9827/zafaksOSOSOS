@@ -32,3 +32,4 @@ $p = $_GET['p'];
 <script src="<?php echo URL_N; ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo URL; ?>/app.js"></script>
 <script src="<?php echo URL; ?>/assets/js/main.js"></script>
+
