@@ -5,5 +5,5 @@ composer.phar
 /cdn.localhost/temp/
 **/uploads/profiles/**
 /build/
-
-
+_Thumbs.db
+Thumbs.db
