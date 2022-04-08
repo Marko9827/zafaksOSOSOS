@@ -18,6 +18,14 @@ if (!empty($_GET['q'])) {
     } else if ($_GET['q'] == "logout") {
         session_destroy();
         echo 1;
+    } else if($_GET['q'] == "moneyAdd"){
+        $racun = intval(moneyH());
+        $racun += 500;
+        query("UPDATE `racun` SET `money` = '$racun' WHERE `racun`.`indeks` = $_SESSION[indeks]");
+
+    } else if ($_GET['q'] == "ispitRemove") {
+        query("DELETE FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`id_studenta` = $_SESSION[user_id] AND id_predmeta = $_POST[id_predmeta]");
+        echo 1;
     } else if ($_GET['q'] == "uploader") {
         try {
             $imgsPath =  __DIR__ . "/uploads/profiles/";

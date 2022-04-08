@@ -6,6 +6,7 @@
     <?php if ($_GET['p'] !== "info") { ?>
         <li><a title="Info" href="./?p=info"><i class="bi bi-info-circle" href=""></i></a></li>
     <?php } ?>
+    <li><a href="https://github.com/Marko9827/zafaksOSOSOS/issues"  target="_blank" title="Prijavi bug"><i class="bi bi-bug-fill"></i></a></li>
 </ul>
 
 <?php if ($_GET['p'] == "info") {

@@ -193,6 +193,11 @@ tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 500px) {
+.navbar-brand-toggler-d{
+  position: absolute;
+}
+
+
   .row {
     display: grid !important;
     width: 100%;
@@ -285,3 +290,7 @@ table textarea {
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
+
+
+
+

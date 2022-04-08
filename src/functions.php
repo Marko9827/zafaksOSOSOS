@@ -155,7 +155,8 @@ function table_ispiti($sql2)
              <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
              <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
              <th>" . $row['brojPrijava'] . "</th>
-            
+                         <th><button type='button' class='btn btn-danger' title='Mod profesora!!! U sledećim verzijama biće posebno!' onclick='odjaviIspit(`$row[id_predmeta]`)'><i class='bi bi-trash-fill'></i> Odjavi Ispit(Kao profesor)</button></th>
+
            
              </tr>";
                             } else if ($sql2 == "ispiti_od_studenta") {
@@ -259,7 +260,7 @@ function table_predmeti($sql2)
              <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
              <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
              <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
-
+ 
              </tr>";
                     }
                 }

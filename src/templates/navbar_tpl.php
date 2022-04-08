@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="./?p=administracija"> <img src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt="Avatar Logo" class="navbar_userIcon rounded-pill">
             </a>
         </button>
-        <button class="navbar-toggler" type="button">
+        <button class="navbar-toggler navbar-brand-toggler-d" type="button">
             <a class="navbar-brand" href="<?php echo URL; ?>"> <img src="<?php echo URL; ?>/assets/img/logo.svg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> E-Student</a>
         </button>
         <div class="buttons">

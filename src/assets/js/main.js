@@ -68,6 +68,29 @@ function prijaviIspit(id_predmeta) {
     });
 }
 
+function odjaviIspit(id){
+    questin("Sigurni ste da želite da odjavite ispit? Naravno možete ga prijaviti u sledećem roku.",function(){
+        $.ajax({
+            url: window.root_url + "?q=ispitRemove",
+            type:"POST", 
+            data:{
+                id_predmeta:id
+            },
+            success:function(v){
+                if(parseInt(v) == 1){
+                    window.location.reload();
+                }
+            }
+        });
+    });
+}
+
+function dodaj_pare(){
+    $.get("./?q=moneyAdd",function(){
+        window.location.reload();
+    });
+}
+
 function changeH(event) {
     var administracija_img_file = document.getElementById("administracija_img"),
         file = $("#administracija_img_file").get(0).files[0];

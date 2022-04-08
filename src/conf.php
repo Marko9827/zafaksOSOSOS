@@ -8,8 +8,8 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'php_rad1');
 define("ROOT",__DIR__);
-define("URL", "$_SERVER[HTTP_ORIGIN]/zaFaksOSOSO/zafaksOSOSOS/src/");
-define("URL_N", "$_SERVER[HTTP_ORIGIN]/zaFaksOSOSO/zafaksOSOSOS/");
+define("URL", "$_SERVER[HTTP_ORIGIN]/zaFaksOSOSO/zafaksOSOSOS/src/"); // ROOT/SRC
+define("URL_N", "$_SERVER[HTTP_ORIGIN]/zaFaksOSOSO/zafaksOSOSOS/"); // ROOT - ZA NODE_MODULE!!!
 
 $con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
