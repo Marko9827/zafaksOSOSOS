@@ -8,7 +8,7 @@
     {
         "icon": "bi icon_b bi-bell",
         "title": "Stara obaveštenja",
-        "href": "javascript:logout();"
+        "href": "./?p=notify"
     },
     {
         "icon": "bi icon_b bi-list-task",

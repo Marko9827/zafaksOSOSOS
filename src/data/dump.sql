@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 04, 2022 at 10:55 PM
+-- Generation Time: Apr 08, 2022 at 08:09 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -43,6 +43,19 @@ CREATE TABLE `aktivniispiti` (
 
 INSERT INTO `aktivniispiti` (`id_ispita`, `datumIspita`, `K1`, `K2`, `ZakljucnaOcena`, `prijaviloIspt`, `id_predmeta`) VALUES
 (0, '2022-04-11', 0, 0, 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notify`
+--
+
+CREATE TABLE `notify` (
+  `id` int(11) NOT NULL,
+  `time` text NOT NULL,
+  `text` longtext NOT NULL,
+  `title` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,17 +132,20 @@ CREATE TABLE `studenti` (
   `id` int(11) NOT NULL,
   `indeks` int(11) NOT NULL,
   `username` text NOT NULL,
-  `password` text,
-  `admin` int(11) NOT NULL DEFAULT '0'
+  `password` text NOT NULL,
+  `admin` int(11) NOT NULL DEFAULT '0',
+  `lang` text NOT NULL,
+  `datumRodjenja` date NOT NULL,
+  `upisao` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studenti`
 --
 
-INSERT INTO `studenti` (`id`, `indeks`, `username`, `password`, `admin`) VALUES
-(1, 2020200219, 'Marko Nikolic', 'sifra123', 0),
-(2, 2020200209, 'Profesor', 'admin123', 1);
+INSERT INTO `studenti` (`id`, `indeks`, `username`, `password`, `admin`, `lang`, `datumRodjenja`, `upisao`) VALUES
+(1, 2020200219, 'Marko Nikolic', 'sifra123', 0, 'rs', '2021-03-25', 'FIR13'),
+(2, 2020200209, 'Profesor', 'admin123', 1, '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 

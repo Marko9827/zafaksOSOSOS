@@ -49,6 +49,20 @@ function Specific($what, $hmm, $id)
     return $ggg;
 }
 
+
+function names($lm)
+{   
+    $lmh = "p_$lm";
+    $arr = array(
+        "p_home" => "Početna",
+        "p_notify" => "Obaveštenja",
+        "p_mojiPredmeti" => "Moji predmeti",
+        "p_prijavaIspita"=>"Prijava ispita",
+        "p_administracija"=>"Administracija"
+    );
+    return $arr[$lmh];
+}
+
 function query($sql)
 {
     global $con;
@@ -65,7 +79,7 @@ function query($sql)
 
 function student($what)
 {
-    $tr = ""; 
+    $tr = "";
     $query = "SELECT * FROM `studenti` WHERE `studenti`.`indeks` = $_SESSION[indeks]";
     $sql = query($query);
     if (mysqli_num_rows($sql)) {
@@ -215,7 +229,8 @@ function table_predmeti($sql2)
     return $tr;
 }
 
-function Lang($word){
+function Lang($word)
+{
     include "./lang/$_SESSION[lang].php";
     return $lang[$word];
 }
