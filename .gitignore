@@ -3,6 +3,7 @@ composer.phar
 /node_modules/
 /cdn.localhost/
 /cdn.localhost/temp/
-**/uploads/**
+**/uploads/profiles/**
 /build/
+
 
