@@ -8,20 +8,19 @@ include "./functions.php";
 
 
 
-
 if (!empty($_GET['q'])) {
     if ($_GET['q'] == "Alogin") {
         include ROOT . "/ajax/login.php";
     } else if ($_GET['q'] == "administracija") {
-     //   if (loged()) {
-            include ROOT . "/ajax/administracija.php";
-       // }
+        //   if (loged()) {
+        include ROOT . "/ajax/administracija.php";
+        // }
     } else if ($_GET['q'] == "logout") {
         session_destroy();
         echo 1;
     } else if ($_GET['q'] == "uploader") {
         try {
-            $imgsPath =  __DIR__."/uploads/profiles/";
+            $imgsPath =  __DIR__ . "/uploads/profiles/";
             foreach ($_FILES as $key) {
                 if ($key['error'] == UPLOAD_ERR_OK) {
                     $id_nime =  time() . rand();
@@ -40,7 +39,7 @@ if (!empty($_GET['q'])) {
         } catch (Exception $e) {
         }
     } else if ($_GET['q'] == "ispit_prijavi") {
-       include  "./ajax/ispit_prijavi.php";
+        include  "./ajax/ispit_prijavi.php";
     } else {
     }
 } else if (!empty($_GET['image'])) {
@@ -83,21 +82,64 @@ if (!empty($_GET['q'])) {
 
                         </div>
                     </section>
-                </main>
+                </main> <?php
+                            if ($_GET['p'] !== "info") {
+
+                        include "./templates/sociallinks.php";
+                            }
+                        ?>
                 <script src="<?php echo URL_N; ?>/node_modules/jquery/dist/jquery.min.js"></script>
                 <script src="<?php echo URL_N; ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
                 <script src="<?php echo URL; ?>/app.js"></script>
                 <script src="<?php echo URL; ?>/assets/js/main.js"></script>
-<?php
+            <?php
             } else {
-                include  ROOT . "/log_reg/login.php";
+                if ($_GET['p'] == "info") {
+                    include  "./pages/info.php";
+                } else {
+                    include  ROOT . "/log_reg/login.php";
+                }
             }
         } else {
             header("location: ./?p=home");
         }
     } else {
-        include  ROOT . "/log_reg/login.php";
-    }
-}
+        if ($_GET['p'] == "info") {
 
-exit();
+
+            tpl("header_tpl", "");
+            ?>
+
+            <body class="text-center">
+                <main>
+
+
+                    <section id="welcome">
+                        <div class="container">
+                            <div class="row">
+                                <?php
+                                include ROOT . "./pages/info.php";
+
+                                ?>
+                            </div>
+
+                        </div>
+                    </section>
+                </main>
+
+
+                <script type="text/javascript" src="./app.js"></script>
+                <script type="text/javascript" src="./assets/js/main.js"></script>
+                <script type="text/javascript" src="<?php echo URL_N; ?>/node_modules/jquery/dist/jquery.min.js"></script>
+                <script type="text/javascript" src="<?php echo URL_N; ?>/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+            </body>
+
+            </html><?php
+                } else {
+                    include  ROOT . "/log_reg/login.php";
+                }
+            }
+        }
+
+        exit();

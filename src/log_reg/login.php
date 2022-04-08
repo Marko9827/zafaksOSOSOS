@@ -21,9 +21,10 @@ tpl("header_tpl", "E-student Prijava ");
         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Prijavi me</button>
         <p class="mt-5 mb-3 text-muted">Marko Nikolić &copy; <?php echo date("Y"); ?></p>
     </form>
-    <ul id="socialLinks">
-        <li><a title="Link ka mom Github respozitorijumu od ovog projekta!" href="https://github.com/Marko9827/zafaksOSOSOS" target="_blank"><i class="fab fa-github"></i></a></li>
-    </ul>
+    <?php
+
+    include "./templates/sociallinks.php";
+    ?>
     <script type="text/javascript" src="./app.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>
     <script type="text/javascript" src="<?php echo URL_N; ?>/node_modules/jquery/dist/jquery.min.js"></script>

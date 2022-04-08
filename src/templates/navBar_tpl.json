@@ -37,6 +37,11 @@
         "href": "./?p=administracija"
     },
     {
+        "icon": "bi icon_b  bi-info-circle",
+        "title": "Info",
+        "href": "./?p=info"
+    },
+    {
         "icon": "bi icon_b bi-box-arrow-right",
         "title": "Odjavi se",
         "href": "javascript:logout();"

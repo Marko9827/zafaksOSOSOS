@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2022 at 08:09 PM
+-- Generation Time: Apr 08, 2022 at 11:32 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -43,6 +43,41 @@ CREATE TABLE `aktivniispiti` (
 
 INSERT INTO `aktivniispiti` (`id_ispita`, `datumIspita`, `K1`, `K2`, `ZakljucnaOcena`, `prijaviloIspt`, `id_predmeta`) VALUES
 (0, '2022-04-11', 0, 0, 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ispit_ocena`
+--
+
+CREATE TABLE `ispit_ocena` (
+  `id` int(11) NOT NULL,
+  `id_studenta` int(11) NOT NULL,
+  `k1` int(11) NOT NULL DEFAULT '0',
+  `k2` int(11) NOT NULL DEFAULT '0',
+  `ZakljucnaOcena` int(11) NOT NULL DEFAULT '0',
+  `id_ispita` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ispit_s_novo`
+--
+
+CREATE TABLE `ispit_s_novo` (
+  `id` int(11) NOT NULL,
+  `id_studenta` int(11) NOT NULL,
+  `id_predmeta` int(11) NOT NULL,
+  `napomene` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ispit_s_novo`
+--
+
+INSERT INTO `ispit_s_novo` (`id`, `id_studenta`, `id_predmeta`, `napomene`) VALUES
+(0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +136,7 @@ CREATE TABLE `prijavljeni_ispiti` (
 --
 
 INSERT INTO `prijavljeni_ispiti` (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`, `indeks`) VALUES
-(0, 0, 1, 0, 0, 2020200219);
+(1, 0, 1, 0, 0, 2020200219);
 
 -- --------------------------------------------------------
 
@@ -120,7 +155,7 @@ CREATE TABLE `racun` (
 --
 
 INSERT INTO `racun` (`id`, `indeks`, `money`) VALUES
-(0, 2020200219, 10);
+(0, 2020200219, 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +179,7 @@ CREATE TABLE `studenti` (
 --
 
 INSERT INTO `studenti` (`id`, `indeks`, `username`, `password`, `admin`, `lang`, `datumRodjenja`, `upisao`) VALUES
-(1, 2020200219, 'Marko Nikolic', 'sifra123', 0, 'rs', '2021-03-25', 'FIR13'),
+(1, 2020200219, 'Marko Nikolic', 'sifra123', 0, 'rs', '2021-03-26', 'FIR'),
 (2, 2020200209, 'Profesor', 'admin123', 1, '', '0000-00-00', '');
 
 -- --------------------------------------------------------
@@ -172,6 +207,28 @@ INSERT INTO `student_predmet` (`id_student_predmet`, `id_studenta`, `id_predmeta
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `upisi`
+--
+
+CREATE TABLE `upisi` (
+  `id` int(11) NOT NULL,
+  `stuednt_id` int(11) NOT NULL,
+  `sta_je_upisao` text NOT NULL,
+  `Godina_upisa` int(11) NOT NULL,
+  `vreme_upisa` date NOT NULL,
+  `kojiPut` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `upisi`
+--
+
+INSERT INTO `upisi` (`id`, `stuednt_id`, `sta_je_upisao`, `Godina_upisa`, `vreme_upisa`, `kojiPut`) VALUES
+(0, 1, 'FIR', 1, '2022-04-15', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -192,6 +249,18 @@ CREATE TABLE `users` (
 ALTER TABLE `aktivniispiti`
   ADD PRIMARY KEY (`id_ispita`),
   ADD UNIQUE KEY `id_ispita` (`id_ispita`);
+
+--
+-- Indexes for table `ispit_ocena`
+--
+ALTER TABLE `ispit_ocena`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ispit_s_novo`
+--
+ALTER TABLE `ispit_s_novo`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `predmeti`
@@ -225,6 +294,12 @@ ALTER TABLE `studenti`
 --
 ALTER TABLE `student_predmet`
   ADD PRIMARY KEY (`id_student_predmet`);
+
+--
+-- Indexes for table `upisi`
+--
+ALTER TABLE `upisi`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`

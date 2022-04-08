@@ -64,7 +64,8 @@ function names($lm)
         "p_prijavaIspita" => "Prijava ispita",
         "p_administracija" => "Administracija",
         "p_upisi" => "Upisi",
-        "p_ispiti" => "Ispiti"
+        "p_ispiti" => "Ispiti",
+        "p_info"=>"Info"
     );
     return $arr[$lmh];
 }
