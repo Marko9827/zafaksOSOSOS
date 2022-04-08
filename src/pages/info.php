@@ -4,20 +4,21 @@
     <h5>E-Student</h5>
     <p>Autor: Marko Nikolić</p>
     <p>- Opis -<br>
-Moj ispitni projekat E-Student za Razvoj Web Aplikacija.<br>
-Projekat će se i dalje razvijati...
-</p>
+        Moj ispitni projekat E-Student za Razvoj Web Aplikacija.<br>
+        Projekat će se i dalje razvijati...
+    </p>
     <p>- Linkovi -</p>
 
     <?php
 
     include "./templates/sociallinks.php";
 
-    if(!loged()){
+    if (!loged()) {
     ?>
 
-    <br>
-    <br>
-    <button style="width: fit-content; margin:auto" class="btn btn-lg btn-primary btn-block" type="button" onclick="window.location.href ='./';">Prijavi me</button>
-<?php } ?>
+        <br>
+        <br>
+        <button style="width: fit-content; margin:auto" class="btn btn-lg btn-primary btn-block" type="button" onclick="window.location.href ='./';">Prijavi me</button>
+    <?php } ?> <p class="mt-5 mb-3 text-muted">Marko Nikolić &copy; <?php echo date("Y"); ?></p>
+
 </div>
