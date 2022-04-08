@@ -91,6 +91,14 @@ function changeH(event) {
 
 }
 
+function notifikacije(){
+    
+}
+
+function red(what) {
+    window.location.href = "./?p=" + what;
+}
+
 function questin(msg, callback) {
     var answer = window.confirm(msg);
     if (answer) {
@@ -107,7 +115,11 @@ function administracijaSAVE() {
     $.ajax({
         url: window.root_url + "?q=administracija",
         type: "POST",
-        data: $("#administracija_form_ha").serialize(),
+        data: {
+            username: $("#username").val(),
+            datumRodjenja: $("#datumRodjenja").val(),
+            upisao: $("#upisao").val()
+        },
         success: function (v) {
             if (parseInt(v) == 1) {
                 window.location.reload();
@@ -120,29 +132,30 @@ function administracijaSAVE() {
 
 
 function sumbitbtn() {
+    questin("Da li ste sigurni da želite da sačuvate izmene?", function () {
+        var fd = new FormData();
+        var files = $('#administracija_img_file')[0].files;
+        if (files.length > 0) {
+            for (i = 0; i < files.length; i++) {
+                fd.append('file' + i, files[i]);
+            }
 
-    var fd = new FormData();
-    var files = $('#administracija_img_file')[0].files;
-    if (files.length > 0) {
-        for (i = 0; i < files.length; i++) {
-            data.append('file' + i, files[i]);
+            $.ajax({
+                url: window.root_url + "?q=uploader",
+                type: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        administracijaSAVE();
+                    }
+                },
+            });
+        } else {
+            administracijaSAVE();
         }
-
-        $.ajax({
-            url: window.root_url + "?q=uploader",
-            type: 'post',
-            data: fd,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response != 0) {
-                    administracijaSAVE();
-                }
-            },
-        });
-    } else {
-        administracijaSAVE();
-    }
+    });
 };
 
 

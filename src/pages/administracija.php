@@ -11,26 +11,20 @@
              </tr>
              <tr>
                  <th>Ime i prezime</th>
-                 <th><input type="username" name="username" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
+                 <th><input type="text" name="username" id="username" value="<?php echo student("username"); ?>" placeholder="Ime i prezime" required /></th>
              </tr>
              <tr>
                  <th>Indeks</th>
-                 <th><input type="number" name="indeks" value="<?php echo student("indeks"); ?>" placeholder="Indeks" required /></th>
+                 <th><?php echo student("indeks"); ?></th>
              </tr>
-             <tr>
-                 <th>Jezik interfejsa</th>
-                 <th><select name="lang_options" required>
-                         <option value="en">Engleski</option>
-                         <option value="rs">Srpski</option>
-                     </select></th>
-             </tr>
+
              <tr>
                  <th>Datum rođenja</th>
-                 <th><input type="date" name="datumRodjenja" placeholder="Datum rođenja" value="<?php echo student("datumRodjenja"); ?>" name="date_pnt" required /></th>
+                 <th><input type="date" name="datumRodjenja" id="datumRodjenja" placeholder="Datum rođenja" value="<?php echo student("datumRodjenja"); ?>" name="date_pnt" required /></th>
              </tr>
              <tr>
                  <th>Upisao</th>
-                 <th><input type="number" value="<?php echo student("upisao"); ?>" placeholder="Upisao" required /></th>
+                 <th><input type="text" name="upisao" id="upisao" value="<?php echo student("upisao"); ?>" placeholder="Upisao" required /></th>
              </tr>
          </table>
 

@@ -8,6 +8,13 @@
             <a class="navbar-brand" href="<?php echo URL; ?>"> <img src="<?php echo URL; ?>/assets/img/logo.svg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> E-Student</a>
         </button>
         <div class="buttons">
+
+
+            <button class="navbar-toggler" title="Obaveštenja" type="button" onclick="red('notify');">
+                <span class="bi icon_b bi-bell"></span>
+            </button>
+
+
             <button class="navbar-toggler" title="Podešavanja" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="bi icon_b bi-gear"></span>
             </button>

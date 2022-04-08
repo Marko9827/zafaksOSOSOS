@@ -3,7 +3,7 @@
         "icon": "bi icon_b bi-house",
         "title": "Početna",
         "data-name": "home",
-        "href": "javascript:logout();"
+        "href": "./?p=home"
     },
     {
         "icon": "bi icon_b bi-bell",

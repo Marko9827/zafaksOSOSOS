@@ -1,18 +1,24 @@
 <?php
 
 if (isset($_POST)) {
-    $v = 0;
-    $sql =  query("UPDATE `studenti` 
-    SET `username` = $_POST[username], 
-    `datumRodjenja` = $_POST[datumRodjenja],
-    `indeks` = $_POST[indeks], 
-    `upisao` = $_POST[upisao]
-    WHERE `studenti`.`id` = $_SESSION[user_id]");
 
-    if ($sql) {
-        $v = 1;
-    }
+include "../conf.php";
+include "../functions.php";
+$sql = "";
 
+$v = 0;
+$username = $_POST['username'];
+$sqlH = "UPDATE `studenti` SET 
+         `studenti`.`username` = '$username', 
+         `studenti`.`datumRodjenja` = '$_POST[datumRodjenja]', 
+         `studenti`.`upisao` = '$_POST[upisao]' 
+        WHERE `studenti`.`indeks` = $_SESSION[indeks]";
+$sql =  query("$sqlH");
 
-    return $v;
+if($sql){
+$v = 1;}
+
+// echo $sqlH;
+   echo $v;
+// }
 }
