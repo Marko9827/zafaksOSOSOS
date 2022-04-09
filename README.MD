@@ -11,7 +11,7 @@
 
 # Info
 
-Moj projekat E-Student za Razvoj Web Aplikacija.
+Moj projekat E-Student...
 Projekat će se i dalje razvijati...
 
 # Napomene
