@@ -26,6 +26,17 @@
                  <th>Upisao</th>
                  <th style="cursor:not-allowed;"><input style="pointer-events:none;" type="text" name="upisao" id="upisao" value="<?php echo Specific("sta_je_upisao", "upisi",  $_SESSION['user_id']); ?>" placeholder="Upisao" required /></th>
              </tr>
+<?php /*
+             <tr>
+                 <th>Jezik interfejsa<br>(privremeno čuvanje, DEMO).</th>
+                 <th>
+                     <select name="jezik">
+                         <option value="en">Engleski</option>
+                         <option value="rs">Srpski</option>
+
+                     </select>
+                 </th>
+             </tr>*/?>
          </table>
 
          <button class="btn btn-lg  table_btns btn-primary btn-block" type="submit" onclick="sumbitbtn();">Sačuvaj izmene</button>

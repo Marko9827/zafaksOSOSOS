@@ -65,7 +65,8 @@ function names($lm)
         "p_administracija" => "Administracija",
         "p_upisi" => "Upisi",
         "p_ispiti" => "Ispiti",
-        "p_info"=>"Info"
+        "p_info"=>"Info",
+        "p_modProfesora"=>"Mod profesora"
     );
     return $arr[$lmh];
 }
@@ -124,6 +125,10 @@ function table_ispiti($sql2)
         if ($sql2 == "prijavljeni") {
             $query = "SELECT * FROM `prijavljeni_ispiti` WHERE `prijavljeni_ispiti`.`indeks` =  $_SESSION[indeks]";
         }
+        if ($sql2 == "ispiti_profesor"){
+            $query = "SELECT * FROM `prijavljeni_ispiti`";
+
+        }
         if ($sql2 == "prijavi") {
             $query = "SELECT * FROM `student_predmet` WHERE `student_predmet`.`id_studenta` = $_SESSION[indeks]";
         }
@@ -171,7 +176,21 @@ function table_ispiti($sql2)
             
            
              </tr>";
-                            } else if ($sql2 == "prijavi") {
+                            }
+                            else if ($sql2 == "ispiti_profesor"){
+                                $tr  .= "<tr>
+             <th>$row_H[Ime_predmeta]</th>
+             <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>
+             <th>$row_H[Profesor]</th>
+             <th>" . Specific("K1", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("K2", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("ZakljucnaOcena", "ispit", $row['id_predmeta']) . "</th>
+             <th>" . Specific("prijavljeni_ispiti", "brojPrijava", $row['id_predmeta']) . "</th>
+            
+           
+             </tr>";
+                            }
+                            else if ($sql2 == "prijavi") {
                                 $tr  .= "<tr>
              <th>$row_H[Ime_predmeta]</th>
              <th>" . Specific("datumIspita", "ispit", $row['id_predmeta']) . "</th>

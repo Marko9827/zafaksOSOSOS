@@ -15,6 +15,9 @@ $sqlH = "UPDATE `studenti` SET
         WHERE `studenti`.`indeks` = $_SESSION[indeks]";
 $sql =  query("$sqlH");
 
+
+$_SESSION["lang"] = $_POST['jezik'];
+
 if($sql){
 $v = 1;}
 

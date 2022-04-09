@@ -9,6 +9,8 @@
     <link rel="icon" href="<?php echo URL; ?>/assets/img/logo.svg">
     <title><?php echo $page_title; ?></title>
     <link rel="stylesheet" href="<?php echo URL; ?>/assets/css/import.css" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
 
 
     <?php
@@ -21,5 +23,5 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="googlebot" content="noindex">
         <link href="<?php echo URL; ?>/assets/css/loged.css" rel="stylesheet">
-     <?php } ?>
+    <?php } ?>
 </head>

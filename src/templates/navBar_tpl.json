@@ -14,7 +14,7 @@
         "icon": "bi icon_b bi-list-task",
         "title": "Moji predmeti",
         "href": "./?p=mojiPredmeti"
-    },
+    } ,
     {
         "icon": "bi icon_b bi-list-check",
         "title": "Prijava ispita",
@@ -35,6 +35,11 @@
         "icon": "bi icon_b bi-wrench-adjustable-circle",
         "title": "Administracija",
         "href": "./?p=administracija"
+    },
+    {
+        "icon": "bi icon_b bi-card-text",
+        "title": "Mod profesora",
+        "href": "./?p=modProfesora"
     },
     {
         "icon": "bi icon_b  bi-info-circle",

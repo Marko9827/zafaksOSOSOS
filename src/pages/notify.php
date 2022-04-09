@@ -23,7 +23,7 @@
                  </tr>
                  <tr>
                      <th>Poruka</th>
-                     <th><?php echo "$row[text]"; ?></th>
+                     <th><?php echo utf8_decode("$row[text]"); ?></th>
                  </tr>
              </table>
      <?php

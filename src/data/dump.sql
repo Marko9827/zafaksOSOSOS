@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2022 at 11:32 PM
+-- Generation Time: Apr 09, 2022 at 10:32 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.4.1
 
@@ -59,6 +59,13 @@ CREATE TABLE `ispit_ocena` (
   `id_ispita` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ispit_ocena`
+--
+
+INSERT INTO `ispit_ocena` (`id`, `id_studenta`, `k1`, `k2`, `ZakljucnaOcena`, `id_ispita`) VALUES
+(0, 3, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -87,10 +94,17 @@ INSERT INTO `ispit_s_novo` (`id`, `id_studenta`, `id_predmeta`, `napomene`) VALU
 
 CREATE TABLE `notify` (
   `id` int(11) NOT NULL,
-  `time` text NOT NULL,
-  `text` longtext NOT NULL,
+  `time` date NOT NULL,
+  `text` text CHARACTER SET utf8 NOT NULL,
   `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notify`
+--
+
+INSERT INTO `notify` (`id`, `time`, `text`, `title`) VALUES
+(0, '2022-04-05', 'Ovo je demo nalog.\r\nPodaci naloga se utomatski resetuju u 00:00 ponoc, svake noci.\r\n\r\nFunkcije Administratora/Profesora nece biti dostupne!', 'Za Demo, 7007007');
 
 -- --------------------------------------------------------
 
@@ -114,7 +128,8 @@ CREATE TABLE `predmeti` (
 --
 
 INSERT INTO `predmeti` (`id_predmeta`, `Ime_predmeta`, `upisanih_studenata`, `Pali_ispit`, `Profesor`, `asistent`, `opis`, `link_predmeta`) VALUES
-(0, 'Razvoj web Aplikacija', 1, 0, 'Dr. Pera X.', 'Milos M.', '', '');
+(0, 'Razvoj web Aplikacija', 1, 0, 'Dr. Pera X.', 'Milos M.', 'PHP, HTML...', ''),
+(1, 'Hotelijerstvo', 2, 0, 'Milan X', 'Demo X', 'Kafi?i, kuhinja', '');
 
 -- --------------------------------------------------------
 
@@ -136,7 +151,7 @@ CREATE TABLE `prijavljeni_ispiti` (
 --
 
 INSERT INTO `prijavljeni_ispiti` (`id_studenta`, `ispit`, `brojPrijava`, `napomene`, `id_predmeta`, `indeks`) VALUES
-(1, 0, 1, 0, 0, 2020200219);
+(3, 0, 1, 0, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -155,7 +170,8 @@ CREATE TABLE `racun` (
 --
 
 INSERT INTO `racun` (`id`, `indeks`, `money`) VALUES
-(0, 2020200219, 1);
+(0, 2020200219, 4001),
+(1, 7, 1000);
 
 -- --------------------------------------------------------
 
@@ -180,7 +196,8 @@ CREATE TABLE `studenti` (
 
 INSERT INTO `studenti` (`id`, `indeks`, `username`, `password`, `admin`, `lang`, `datumRodjenja`, `upisao`) VALUES
 (1, 2020200219, 'Marko Nikolic', 'sifra123', 0, 'rs', '2021-03-26', 'FIR'),
-(2, 2020200209, 'Profesor', 'admin123', 1, '', '0000-00-00', '');
+(2, 2020200209, 'Profesor', 'admin123', 1, '', '0000-00-00', ''),
+(3, 7007007, 'demo', 'demo', 0, 'en', '2022-04-08', 'Turizam');
 
 -- --------------------------------------------------------
 
@@ -202,7 +219,8 @@ CREATE TABLE `student_predmet` (
 --
 
 INSERT INTO `student_predmet` (`id_student_predmet`, `id_studenta`, `id_predmeta`, `polozio_da_ne`, `prijavio`, `brojPrijava`) VALUES
-(0, 2020200219, 0, 0, 0, 0);
+(0, 2020200219, 0, 0, 0, 0),
+(1, 7, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -224,7 +242,8 @@ CREATE TABLE `upisi` (
 --
 
 INSERT INTO `upisi` (`id`, `stuednt_id`, `sta_je_upisao`, `Godina_upisa`, `vreme_upisa`, `kojiPut`) VALUES
-(0, 1, 'FIR', 1, '2022-04-15', 1);
+(0, 1, 'FIR', 1, '2022-04-15', 1),
+(1, 3, 'Turizam', 1, '2022-01-12', 1);
 
 -- --------------------------------------------------------
 
@@ -260,6 +279,12 @@ ALTER TABLE `ispit_ocena`
 -- Indexes for table `ispit_s_novo`
 --
 ALTER TABLE `ispit_s_novo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notify`
+--
+ALTER TABLE `notify`
   ADD PRIMARY KEY (`id`);
 
 --
