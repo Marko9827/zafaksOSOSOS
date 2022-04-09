@@ -1,7 +1,8 @@
 <nav class="navbar navbar-tpl">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button">
-            <a class="navbar-brand" href="./?p=administracija"> <img src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt="Avatar Logo" class="navbar_userIcon rounded-pill">
+            <a class="navbar-brand" href="./?p=administracija"> <img  onerror="$(this).attr('src','./assets/img/user.svg');"
+            src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt="Avatar Logo" class="navbar_userIcon rounded-pill">
             </a>
         </button>
         <button class="navbar-toggler navbar-brand-toggler-d" type="button">

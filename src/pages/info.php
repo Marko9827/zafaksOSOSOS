@@ -3,10 +3,12 @@
     <img width="60px" height="60px" src="./assets/img/logo.svg" alt="logo" />
     <h5>E-Student</h5>
     <p>Autor: Marko Nikolić</p>
-    <p>- Opis -<br>
-        Moj ispitni projekat E-Student za Razvoj Web Aplikacija.<br>
+    <p>- Opis -<br>E-Student portal za organizovanje ocena, upisa,<br>predmeta i drugih studenskih obaveza.<br><br> Jednostavno! Za studente i profesore.<br>
         Projekat će se i dalje razvijati...
-    </p>
+    </p><?php /*<p>
+    Moj ispitni projekat E-Student za Razvoj Web Aplikacija.<br>
+    Projekat će se i dalje razvijati...
+    </p>*/?>
     <p>- Linkovi -</p>
 
     <?php

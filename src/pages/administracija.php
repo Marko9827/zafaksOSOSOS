@@ -5,7 +5,7 @@
          <table>
              <tr>
                  <th>Slika</th>
-                 <th><img class="administracija_img" id="administracija_img" onclick=" document.getElementById('administracija_img_file').click();" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" />
+                 <th><img onerror="$(this).attr('src','./assets/img/user.svg');" class="administracija_img" id="administracija_img" onclick=" document.getElementById('administracija_img_file').click();" src="<?php echo URL . "/?image=$_SESSION[indeks]"; ?>" alt=" slika" />
                      <input multiple id="administracija_img_file" style="display: none;" type="file" onchange="changeH(this);" accept="image/*" />
                  </th>
              </tr>
