@@ -16,3 +16,7 @@ Projekat će se i dalje razvijati...
 
 # Napomene
 - Nije potrebno instalirati composer!
+
+# Podrži projekat
+
+https://opencollective.com/estudent
